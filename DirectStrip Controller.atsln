@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{18226A42-8477-4023-8AD2-40C49DA407C9}") = "DirectStrip Controller", "DirectStrip Controller\DirectStrip Controller.asmproj", "{659AAD2B-34F9-47E1-8674-39032410B279}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{659AAD2B-34F9-47E1-8674-39032410B279}.Debug|AVR.ActiveCfg = Debug|AVR
+		{659AAD2B-34F9-47E1-8674-39032410B279}.Debug|AVR.Build.0 = Debug|AVR
+		{659AAD2B-34F9-47E1-8674-39032410B279}.Release|AVR.ActiveCfg = Release|AVR
+		{659AAD2B-34F9-47E1-8674-39032410B279}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
