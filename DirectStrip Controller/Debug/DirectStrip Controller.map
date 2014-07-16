@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.51  C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm Tue Jul 15 21:18:52 2014
+AVRASM ver. 2.1.51  C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm Wed Jul 16 09:20:18 2014
 
 
 EQU  SIGNATURE_000 0000001e
@@ -953,13 +953,13 @@ CSEG FT245_WaitForReadLoop@FT245_WaitForRead_PayLoad@3569 000000d2
 CSEG FT245_WaitForReadLoop@FT245_WaitForRead_PayLoad@3587 000000dc
 CSEG ReceiveData_Loop 000000e8
 CSEG FT245_WaitForReadLoop@FT245_WaitForRead@3634 000000e8
-CSEG FT245_WaitForWriteLoop@FT245_WaitForWrite@3658 000000f2
+CSEG FT245_WaitForWriteLoop@FT245_WaitForWrite@3660 000000f2
 CSEG LedAlternateBlinkExit 0000010c
 CSEG LedAlternateBlinkOther 0000010a
 CSEG LedBothBlinkExit 0000011b
 CSEG LedBothBlinkOther 00000119
-CSEG FT245_WaitForReadLoop@FT245_WaitForRead_PayLoad@3835 0000011c
-CSEG FT245_WaitForReadLoop@FT245_WaitForRead_PayLoad@3853 00000126
+CSEG FT245_WaitForReadLoop@FT245_WaitForRead_PayLoad@3837 0000011c
+CSEG FT245_WaitForReadLoop@FT245_WaitForRead_PayLoad@3855 00000126
 CSEG Channel_loop_800 00000132
 CSEG Bit0_0_800   00000146
 CSEG Bit0_1_800   00000137
@@ -986,5 +986,5 @@ CSEG bit7_0_800   0000024b
 CSEG Bit7_1_800   00000233
 CSEG bit7_islasthighbit_800 00000241
 CSEG leave_loop_800 00000258
-CSEG FT245_WaitForWriteLoop@FT245_WaitForWrite@4304 00000258
-CSEG WaitUsLoop@WaitUs@4351 00000263
+CSEG FT245_WaitForWriteLoop@FT245_WaitForWrite@4306 00000258
+CSEG WaitUsLoop@WaitUs@4353 00000263

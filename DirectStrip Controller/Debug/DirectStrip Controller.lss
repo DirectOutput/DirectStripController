@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.51  C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm Tue Jul 15 21:18:52 2014
+AVRASM ver. 2.1.51  C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm Wed Jul 16 09:20:18 2014
 
 [builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRAssembler\2.1.51.46\AvrAssembler/Include\m1284pdef.inc'
 C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm(3): Including file 'C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRAssembler\2.1.51.46\AvrAssembler/Include\m1284Pdef.inc'
@@ -2139,7 +2139,7 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    SetPortBit Led_Port,Led_Yellow_Bit
-                    
+                  
                 +
                 +
                 +FT245_WaitForWriteLoop :
@@ -2265,6 +2265,7 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
 0000e8 994e     +sbic FT245_StatusPin , FT245_RxfBit
 0000e9 cffe     +rjmp FT245_WaitForReadLoop
                      FT245_WaitForRead
+                 
                 +
                 +
 0000ea 985d     +cbi FT245_StatusPort , FT245_RdBit
@@ -2274,6 +2275,7 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
 0000ee 9a5d     +sbi FT245_StatusPort , FT245_RdBit
                      FT245_ReadByte RData
 0000ef 920d      	st x+,RData
+                 		
                    //     FT245_SendByte RData
                    //    FT245_SendByte RBufferLoopCounterHigh
                  //	  FT245_SendByte RBufferLoopCounter
@@ -2953,14 +2955,138 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
 00027f 666f
 000280 6320
 000281 646f
-C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm(769): warning: .cseg .db misalignment - padding zero byte
+C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm(771): warning: .cseg .db misalignment - padding zero byte
 000282 0065      .db	"End of code"
                  
+000283 0100
+000284 0302
+000285 0504
+000286 0706
+000287 0908
+000288 0b0a
+000289 0d0c
+00028a 0f0e
+00028b 1110
+00028c 1312
+00028d 1514
+00028e 1716
+00028f 1918
+000290 1b1a
+000291 1d1c
+000292 1f1e
+000293 2120
+000294 2322
+000295 2524
+000296 2726
+000297 2928
+000298 2b2a
+000299 2d2c
+00029a 2f2e
+00029b 3130
+00029c 3332
+00029d 3534
+00029e 3736
+00029f 3938
+0002a0 3b3a
+0002a1 3d3c
+0002a2 3f3e
+0002a3 4140
+0002a4 4342
+0002a5 4544
+0002a6 4746
+0002a7 4948
+0002a8 4b4a
+0002a9 4d4c
+0002aa 4f4e
+0002ab 5150
+0002ac 5352
+0002ad 5554
+0002ae 5756
+0002af 5958
+0002b0 5b5a
+0002b1 5d5c
+0002b2 5f5e
+0002b3 6160
+0002b4 6362
+0002b5 6564
+0002b6 6766
+0002b7 6968
+0002b8 6b6a
+0002b9 6d6c
+0002ba 6f6e
+0002bb 7170
+0002bc 7372
+0002bd 7574
+0002be 7776
+0002bf 7978
+0002c0 7b7a
+0002c1 7d7c
+0002c2 7f7e
+0002c3 8180
+0002c4 8382
+0002c5 8584
+0002c6 8786
+0002c7 8988
+0002c8 8b8a
+0002c9 8d8c
+0002ca 8f8e
+0002cb 9190
+0002cc 9392
+0002cd 9594
+0002ce 9796
+0002cf 9998
+0002d0 9b9a
+0002d1 9d9c
+0002d2 9f9e
+0002d3 a1a0
+0002d4 a3a2
+0002d5 a5a4
+0002d6 a7a6
+0002d7 a9a8
+0002d8 abaa
+0002d9 adac
+0002da afae
+0002db b1b0
+0002dc b3b2
+0002dd b5b4
+0002de b7b6
+0002df b9b8
+0002e0 bbba
+0002e1 bdbc
+0002e2 bfbe
+0002e3 c1c0
+0002e4 c3c2
+0002e5 c5c4
+0002e6 c7c6
+0002e7 c9c8
+0002e8 cbca
+0002e9 cdcc
+0002ea cfce
+0002eb d1d0
+0002ec d3d2
+0002ed d5d4
+0002ee d7d6
+0002ef d9d8
+0002f0 dbda
+0002f1 dddc
+0002f2 dfde
+0002f3 e1e0
+0002f4 e3e2
+0002f5 e5e4
+0002f6 e7e6
+0002f7 e9e8
+0002f8 ebea
+0002f9 edec
+0002fa efee
+0002fb f1f0
+0002fc f3f2
+0002fd f5f4
+0002fe f7f6
+0002ff f9f8
+000300 fbfa
+000301 fdfc
+000302 fffe      .db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 6                 5, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 1                 23, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 1                 74, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 2000100           25, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255 
                  
-                 .DSEG
-                 
-000100           DataBuffer: .BYTE DataBufferSize
-                  
 
 
 RESOURCE USE INFORMATION
@@ -3011,7 +3137,7 @@ Instructions used: 32 out of 114 (28.1%)
 "ATmega1284P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000506   1274     12   1286  131072   1.0%
+[.cseg] 0x000000 0x000606   1274    268   1542  131072   1.2%
 [.dseg] 0x000100 0x0040c0      0  16320  16320   16384  99.6%
 [.eseg] 0x000000 0x000000      0      0      0    4096   0.0%
 
