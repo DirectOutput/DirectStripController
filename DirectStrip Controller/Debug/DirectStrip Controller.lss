@@ -1,5 +1,5 @@
 
-AVRASM ver. 2.1.51  C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm Wed Jul 16 09:20:18 2014
+AVRASM ver. 2.1.51  C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm Sun Mar 29 12:57:26 2015
 
 [builtin](2): Including file 'C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRAssembler\2.1.51.46\AvrAssembler/Include\m1284pdef.inc'
 C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm(3): Including file 'C:\Program Files (x86)\Atmel\Atmel Studio 6.0\extensions\Atmel\AVRAssembler\2.1.51.46\AvrAssembler/Include\m1284Pdef.inc'
@@ -1541,25 +1541,184 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                  .endm
                  
                  
+                 
+                 
+                 ;*********************************************
+                 ;** IRQ vectors
+                 ;*********************************************
+                 .org 0x00
+000000 940c 0080 jmp Init
+000002 0000
+000003 0000
+000004 0000
+000005 0000
+000006 0000
+000007 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0
+000008 0000
+000009 0000
+00000a 0000
+00000b 0000
+00000c 0000
+00000d 0000
+00000e 0000
+00000f 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                 
+                 
+000010 0000
+000011 0000
+000012 0000
+000013 0000
+000014 0000
+000015 0000
+000016 0000
+000017 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ;0x10
+000018 0000
+000019 0000
+00001a 0000
+00001b 0000
+00001c 0000
+00001d 0000
+00001e 0000
+00001f 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+000020 0000
+000021 0000
+000022 0000
+000023 0000
+000024 0000
+000025 0000
+000026 0000
+000027 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ;0x20
+000028 0000
+000029 0000
+00002a 0000
+00002b 0000
+00002c 0000
+00002d 0000
+00002e 0000
+00002f 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+000030 0000
+000031 0000
+000032 0000
+000033 0000
+000034 0000
+000035 0000
+000036 0000
+000037 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ;0x30 
+000038 0000
+000039 0000
+00003a 0000
+00003b 0000
+00003c 0000
+00003d 0000
+00003e 0000
+00003f 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+000040 0000
+000041 0000
+000042 0000
+000043 0000
+000044 0000
+000045 0000
+000046 0000
+000047 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ;0x40
+000048 0000
+000049 0000
+00004a 0000
+00004b 0000
+00004c 0000
+00004d 0000
+00004e 0000
+00004f 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+000050 0000
+000051 0000
+000052 0000
+000053 0000
+000054 0000
+000055 0000
+000056 0000
+000057 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ;0x50
+000058 0000
+000059 0000
+00005a 0000
+00005b 0000
+00005c 0000
+00005d 0000
+00005e 0000
+00005f 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+000060 0000
+000061 0000
+000062 0000
+000063 0000
+000064 0000
+000065 0000
+000066 0000
+000067 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ;0x60
+000068 0000
+000069 0000
+00006a 0000
+00006b 0000
+00006c 0000
+00006d 0000
+00006e 0000
+00006f 0000      .db 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+                 
+                 
+                 //*********************************************
+                 //** Firmwareinformation
+                 //*********************************************
+                 
+                 //Firmware version 1.2
+                 .org 0x70
+000070 3103
+000071 322e
+000072 0000
+000073 0000
+000074 0000
+000075 0000
+000076 0000
+000077 0000      .db 0x03,0x31,0x2e,0x32,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+                 
+                 //Hardware revision 5.0
+                 .org 0x78
+000078 3503
+000079 302e
+00007a 0000
+00007b 0000
+00007c 0000
+00007d 0000
+00007e 0000      .db 0x03,0x35,0x2e,0x30,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+                 
+                 //Checksum
+                 .org 0x7f
+00007f 0053      .db 0x53,0x00
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
+                 
                  ;*********************************************
                  ;** Init
                  ;*********************************************
+                 .org 0x80
                  .CSEG
                  Init:	
-000000 94f8      	cli						; no interrupts allowed
-000001 ef1f      	ldi	RTemp, low (RamEnd)	; initialize stack
-000002 bf1d      	out	SPL, RTemp
-000003 e410      	ldi	RTemp, high(RamEnd)
-000004 bf1e      	out	SPH, RTemp
+000080 94f8      	cli						; no interrupts allowed
+000081 ef1f      	ldi	RTemp, low (RamEnd)	; initialize stack
+000082 bf1d      	out	SPL, RTemp
+000083 e410      	ldi	RTemp, high(RamEnd)
+000084 bf1e      	out	SPH, RTemp
                  
                    ;Set IO direction for FT245 data port (input)
                 +
                 +
                 +
-000005 e010     +ldi Rtemp , 0x00
+000085 e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-000006 b917     +out FT245_DataDDR , RTemp
+000086 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -1569,25 +1728,25 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                    ;Set IO Directtion for FT245 status connectors
                 +
                 +        .if FT245_StatusDDR < 0x20
-000007 9a54     +sbi FT245_StatusDDR , FT245_WRBit
+000087 9a54     +sbi FT245_StatusDDR , FT245_WRBit
                 +		.else 
                 +ReadPort FT245_StatusDDR , RTemp
                    SetPortBit FT245_StatusDDR,FT245_WRBit
                 +
                 +        .if FT245_StatusDDR < 0x20
-000008 9a55     +sbi FT245_StatusDDR , FT245_RDBit
+000088 9a55     +sbi FT245_StatusDDR , FT245_RDBit
                 +		.else 
                 +ReadPort FT245_StatusDDR , RTemp
                    SetPortBit FT245_StatusDDR,FT245_RDBit
                 +
                 +        .if FT245_StatusDDR < 0x20
-000009 9856     +cbi FT245_StatusDDR , FT245_RxfBit
+000089 9856     +cbi FT245_StatusDDR , FT245_RxfBit
                 +		.else 
                 +ReadPort FT245_StatusDDR , RTemp
                    ClearPortBit FT245_StatusDDR,FT245_RxfBit
                 +
                 +        .if FT245_StatusDDR < 0x20
-00000a 9857     +cbi FT245_StatusDDR , FT245_TXEBit
+00008a 9857     +cbi FT245_StatusDDR , FT245_TXEBit
                 +		.else 
                 +ReadPort FT245_StatusDDR , RTemp
                    ClearPortBit FT245_StatusDDR,FT245_TXEBit
@@ -1595,50 +1754,50 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                    ;Set Rd and WR to initial values
                 +
                 +        .if FT245_StatusPort < 0x20
-00000b 9a5d     +sbi FT245_StatusPort , FT245_RDBit
+00008b 9a5d     +sbi FT245_StatusPort , FT245_RDBit
                 +		.else 
                 +ReadPort FT245_StatusPort , RTemp
                    SetPortBit FT245_StatusPort,FT245_RDBit
                 +
                 +        .if FT245_StatusPort < 0x20
-00000c 9a5c     +sbi FT245_StatusPort , FT245_WRBit
+00008c 9a5c     +sbi FT245_StatusPort , FT245_WRBit
                 +		.else 
                 +ReadPort FT245_StatusPort , RTemp
                    SetPortBit FT245_StatusPort,FT245_WRBit
                  
                    ;Empty input buffer
                 +
-00000d 0000     +nop
-00000e 0000     +nop
-00000f 994e     +sbic FT245_StatusPin , FT245_RxfBit
-000010 c008     +rjmp FT245_ClearInputBufferExit
+00008d 0000     +nop
+00008e 0000     +nop
+00008f 994e     +sbic FT245_StatusPin , FT245_RxfBit
+000090 c008     +rjmp FT245_ClearInputBufferExit
                 +FT245_ClearInputBufferLoop :
-000011 985d     +cbi FT245_StatusPort , FT245_RdBit
-000012 0000     +nop
-000013 0000     +nop
-000014 9a5d     +sbi FT245_StatusPort , FT245_RdBit
-000015 0000     +nop
-000016 0000     +nop
-000017 9b4e     +sbis FT245_StatusPin , FT245_RxfBit
-000018 cff8     +rjmp FT245_ClearInputBufferLoop
+000091 985d     +cbi FT245_StatusPort , FT245_RdBit
+000092 0000     +nop
+000093 0000     +nop
+000094 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+000095 0000     +nop
+000096 0000     +nop
+000097 9b4e     +sbis FT245_StatusPin , FT245_RxfBit
+000098 cff8     +rjmp FT245_ClearInputBufferLoop
                 +FT245_ClearInputBufferExit :
                    FT245_ClearInputBuffer
                    
                    ;Init ExtPort
                 +
-000019 ef1f     +ldi Rtemp , 0xff
+000099 ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if Ext_DDR < 0x40
-00001a b911     +out Ext_DDR , RTemp
+00009a b911     +out Ext_DDR , RTemp
                 +  .else 
                 +sts Ext_DDR , RTemp
                 +WritePort Ext_DDR , RTemp
                    WritePortValue Ext_DDR,0xff
                 +
-00001b e010     +ldi Rtemp , 0
+00009b e010     +ldi Rtemp , 0
                 +
                 +  .if Ext_Port < 0x40
-00001c b912     +out Ext_Port , RTemp
+00009c b912     +out Ext_Port , RTemp
                 +  .else 
                 +sts Ext_Port , RTemp
                 +WritePort Ext_Port , RTemp
@@ -1647,25 +1806,25 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                    ;Set led port bits to output & turn leds off
                 +
                 +        .if Led_DDR < 0x20
-00001d 9a52     +sbi Led_DDR , Led_Yellow_Bit
+00009d 9a52     +sbi Led_DDR , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_DDR , RTemp
                    SetPortBit Led_DDR,Led_Yellow_Bit
                 +
                 +        .if Led_DDR < 0x20
-00001e 9a53     +sbi Led_DDR , Led_Red_Bit
+00009e 9a53     +sbi Led_DDR , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_DDR , RTemp
                    SetPortBit Led_DDR,Led_Red_Bit
                 +
                 +        .if Led_Port < 0x20
-00001f 985a     +cbi Led_Port , Led_Yellow_Bit
+00009f 985a     +cbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    ClearPortBit Led_Port,Led_Yellow_Bit
                 +
                 +        .if Led_Port < 0x20
-000020 985b     +cbi Led_Port , Led_Red_Bit
+0000a0 985b     +cbi Led_Port , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    ClearPortBit Led_Port,Led_Red_Bit
@@ -1673,13 +1832,13 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                    ;Set IO direction to output for WS2811 connector
                 +
                 +        .if WS2811_DDR < 0x20
-000021 9a51     +sbi WS2811_DDR , WS2811_Bit
+0000a1 9a51     +sbi WS2811_DDR , WS2811_Bit
                 +		.else 
                 +ReadPort WS2811_DDR , RTemp
                    SetPortBit WS2811_DDR,WS2811_Bit
                 +
                 +        .if WS2811_Port < 0x20
-000022 9859     +cbi WS2811_Port , WS2811_Bit
+0000a2 9859     +cbi WS2811_Port , WS2811_Bit
                 +		.else 
                 +ReadPort WS2811_Port , RTemp
                    ClearPortBit WS2811_Port,WS2811_Bit
@@ -1687,75 +1846,75 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                    
                    Main:
                  	 //First command byte is received by the bootloader
-000023 d009      	 RCall Processcommand
+0000a3 d009      	 RCall Processcommand
                  
                 +
                 +FT245_WaitForReadLoop :
-000024 d0e8     +rcall LedBothBlink
-000025 994e     +sbic FT245_StatusPin , FT245_RxfBit
-000026 cffd     +rjmp FT245_WaitForReadLoop
+0000a4 d117     +rcall LedBothBlink
+0000a5 994e     +sbic FT245_StatusPin , FT245_RxfBit
+0000a6 cffd     +rjmp FT245_WaitForReadLoop
                       FT245_WaitForRead_PayLoad LedBothBlink
                  	 
                 +
                 +
-000027 985d     +cbi FT245_StatusPort , FT245_RdBit
-000028 0000     +nop
-000029 0000     +nop
-00002a b126     +in RCommandByte , FT245_DataPin
-00002b 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+0000a7 985d     +cbi FT245_StatusPort , FT245_RdBit
+0000a8 0000     +nop
+0000a9 0000     +nop
+0000aa b126     +in RCommandByte , FT245_DataPin
+0000ab 9a5d     +sbi FT245_StatusPort , FT245_RdBit
                  	 FT245_ReadByte RCommandByte
                  
-00002c cff6        rjmp Main
+0000ac cff6        rjmp Main
                  
                  
                  
                  
                    ProcessCommand:
-00002d 5421          subi RCommandByte,MinCommandByte
-00002e 312a      	cpi RCommandByte,(MaxCommandByte-MinCommandByte+1)
-00002f f430      	brsh ProcessCommand_NoValidCommand
-000030 e3e7      	ldi ZL,low(ProcessCommandJumps);
-000031 e0f0      	ldi ZH,high(ProcessCommandJumps);
-000032 0fe2      	add ZL,RCommandByte
-000033 e020      	ldi RCommandByte,0
-000034 1ff2      	adc ZH,RCommandByte
-000035 9409      	ijmp
+0000ad 5421          subi RCommandByte,MinCommandByte
+0000ae 312a      	cpi RCommandByte,(MaxCommandByte-MinCommandByte+1)
+0000af f430      	brsh ProcessCommand_NoValidCommand
+0000b0 ebe7      	ldi ZL,low(ProcessCommandJumps);
+0000b1 e0f0      	ldi ZH,high(ProcessCommandJumps);
+0000b2 0fe2      	add ZL,RCommandByte
+0000b3 e020      	ldi RCommandByte,0
+0000b4 1ff2      	adc ZH,RCommandByte
+0000b5 9409      	ijmp
                  
                    ProcessCommand_NoValidCommand:
-000036 c01b        rjmp UnknownCommand
+0000b6 c01b        rjmp UnknownCommand
                  
                    ;Use RJMP for the process command jumps. If the JMP statement has to be used to accomodate longer jumps, 
                    ;the added command byte value has to be shifted left one position to support the JMP statement (4 byte vs 2 bytes) 
                    ;and the calculation for MaxCommandByte has to be adjusted as well.
                    ;The procedures called in the following section must all end with Ret
                    ProcessCommandJumps:   
-000037 c01a          rjmp UnknownCommand		;A
-000038 c019      	rjmp UnknownCommand		;B
-000039 c082          rjmp ClearDataBuffer	;C
-00003a c017          rjmp UnknownCommand		;D
-00003b c06b          rjmp ExtPort			;E
-00003c c015          rjmp UnknownCommand		;F
-00003d c014          rjmp UnknownCommand		;G
-00003e c013          rjmp UnknownCommand		;H
-00003f c012          rjmp UnknownCommand		;I
-000040 c011          rjmp UnknownCommand		;J
-000041 c010          rjmp UnknownCommand		;K
-000042 c00f          rjmp UnknownCommand		;L
-000043 c00e          rjmp UnknownCommand		;M
-000044 c00d          rjmp UnknownCommand		;N
-000045 c0d6          rjmp OutputData			;O
-000046 c00b          rjmp UnknownCommand		;P
-000047 c00a          rjmp UnknownCommand		;Q
-000048 c088          rjmp ReceiveData		;R
-000049 c008          rjmp UnknownCommand		;S
-00004a c007          rjmp UnknownCommand		;T
-00004b c006          rjmp UnknownCommand		;U
-00004c c027          rjmp SendVersion		;V
-00004d c004          rjmp UnknownCommand		;W
-00004e c003          rjmp UnknownCommand		;X
-00004f c002          rjmp UnknownCommand		;Y
-000050 c00c          rjmp EnterBootLoader		;Z - Reserved for bootloader
-000051 c000          rjmp UnknownCommand		;Just to be sure
+0000b7 c01a          rjmp UnknownCommand		;A
+0000b8 c019      	rjmp UnknownCommand		;B - Reserved for bootloader
+0000b9 c082          rjmp ClearDataBuffer	;C
+0000ba c017          rjmp UnknownCommand		;D
+0000bb c06b          rjmp ExtPort			;E
+0000bc c015          rjmp UnknownCommand		;F
+0000bd c014          rjmp UnknownCommand		;G
+0000be c013          rjmp UnknownCommand		;H
+0000bf c012          rjmp UnknownCommand		;I
+0000c0 c011          rjmp UnknownCommand		;J
+0000c1 c010          rjmp UnknownCommand		;K
+0000c2 c00f          rjmp UnknownCommand		;L
+0000c3 c00e          rjmp UnknownCommand		;M
+0000c4 c00d          rjmp UnknownCommand		;N
+0000c5 c105          rjmp OutputData			;O
+0000c6 c00b          rjmp UnknownCommand		;P
+0000c7 c00a          rjmp UnknownCommand		;Q
+0000c8 c0b7          rjmp ReceiveData		;R
+0000c9 c087          rjmp SendData			;S
+0000ca c007          rjmp UnknownCommand		;T
+0000cb c006          rjmp UnknownCommand		;U
+0000cc c027          rjmp SendVersion		;V
+0000cd c004          rjmp UnknownCommand		;W
+0000ce c003          rjmp UnknownCommand		;X
+0000cf c002          rjmp UnknownCommand		;Y
+0000d0 c00c          rjmp EnterBootLoader		;Z - Reserved for bootloader
+0000d1 c000          rjmp UnknownCommand		;Just to be sure
                  
                    ;The folowing label must follow immediately after the jump statements. It is used to detemine the max command number  
                    ProcessCommandJumpsEnd:
@@ -1768,74 +1927,74 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +
                 +
                 +FT245_WaitForWriteLoop :
-000052 994f     +sbic FT245_StatusPin , FT245_TxeBit
-000053 cffe     +rjmp FT245_WaitForWriteLoop
+0000d2 994f     +sbic FT245_StatusPin , FT245_TxeBit
+0000d3 cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-000054 ef1f     +ldi Rtemp , 0xff
+0000d4 ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-000055 b917     +out FT245_DataDDR , RTemp
+0000d5 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0xff
                 +FT245_SetOutput
-000056 e41e     +ldi RTemp , 'N'
+0000d6 e41e     +ldi RTemp , 'N'
                 +
                 +
-000057 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-000058 b918     +out FT245_DataPort , RTemp
-000059 985c     +cbi FT245_StatusPort , FT245_WrBit
+0000d7 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+0000d8 b918     +out FT245_DataPort , RTemp
+0000d9 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RTemp
                 +
                 +
                 +
-00005a e010     +ldi Rtemp , 0x00
+0000da e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-00005b b917     +out FT245_DataDDR , RTemp
+0000db b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0x00
                 +FT245_SetInput
                    FT245_SendNack
-00005c 9508      ret
+0000dc 9508      ret
                  
                  EnterBootLoader:
                 +
                 +
                 +FT245_WaitForWriteLoop :
-00005d 994f     +sbic FT245_StatusPin , FT245_TxeBit
-00005e cffe     +rjmp FT245_WaitForWriteLoop
+0000dd 994f     +sbic FT245_StatusPin , FT245_TxeBit
+0000de cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-00005f ef1f     +ldi Rtemp , 0xff
+0000df ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-000060 b917     +out FT245_DataDDR , RTemp
+0000e0 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0xff
                 +FT245_SetOutput
-000061 e411     +ldi RTemp , 'A'
+0000e1 e411     +ldi RTemp , 'A'
                 +
                 +
-000062 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-000063 b918     +out FT245_DataPort , RTemp
-000064 985c     +cbi FT245_StatusPort , FT245_WrBit
+0000e2 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+0000e3 b918     +out FT245_DataPort , RTemp
+0000e4 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RTemp
                 +
                 +
                 +
-000065 e010     +ldi Rtemp , 0x00
+0000e5 e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-000066 b917     +out FT245_DataDDR , RTemp
+0000e6 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -1845,57 +2004,57 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                  
                  
                  
-000067 95a8        wdr
+0000e7 95a8        wdr
                    ; Start timed sequence
                 +
                 +  .if WDTCSR < 0x40
                 +in RTemp , WDTCSR
-000068 9110 0060+  .else 
+0000e8 9110 0060+  .else 
                 +lds RTemp , WDTCSR
                    ReadPort WDTCSR, RTemp
-00006a 6118        ori RTemp, (1<<WDCE) | (1<<WDE)
+0000ea 6118        ori RTemp, (1<<WDCE) | (1<<WDE)
                 +
                 +  .if WDTCSR < 0x40
                 +out WDTCSR , RTemp
-00006b 9310 0060+  .else 
+0000eb 9310 0060+  .else 
                 +sts WDTCSR , RTemp
                    WritePort WDTCSR, RTemp
                    ; -- Got four cycles to set the new values from here -; Set new prescaler(time-out) value = 64K cycles (~0.5 s)
-00006d e018        ldi RTemp, (1<<WDE)
+0000ed e018        ldi RTemp, (1<<WDE)
                 +
                 +  .if WDTCSR < 0x40
                 +out WDTCSR , RTemp
-00006e 9310 0060+  .else 
+0000ee 9310 0060+  .else 
                 +sts WDTCSR , RTemp
                    WritePort WDTCSR, RTemp
                  
                  
                 +
-000070 e018     +ldi Rtemp , ( 1 << WDE )
+0000f0 e018     +ldi Rtemp , ( 1 << WDE )
                 +
                 +  .if WDTCSR < 0x40
                 +out WDTCSR , RTemp
-000071 9310 0060+  .else 
+0000f1 9310 0060+  .else 
                 +sts WDTCSR , RTemp
                 +WritePort WDTCSR , RTemp
                    WritePortValue WDTCSR , (1<<WDE)
                    EnterBootLoaderWait:
-000073 cfff        rjmp EnterBootLoaderWait
+0000f3 cfff        rjmp EnterBootLoaderWait
                  
                  SendVersion:
-000074 e32e      ldi RCommandByte,'>'
+0000f4 e32e      ldi RCommandByte,'>'
                 +
                 +
                 +FT245_WaitForWriteLoop :
-000075 994f     +sbic FT245_StatusPin , FT245_TxeBit
-000076 cffe     +rjmp FT245_WaitForWriteLoop
+0000f5 994f     +sbic FT245_StatusPin , FT245_TxeBit
+0000f6 cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-000077 ef1f     +ldi Rtemp , 0xff
+0000f7 ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-000078 b917     +out FT245_DataDDR , RTemp
+0000f8 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -1903,36 +2062,36 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +FT245_SetOutput
                 +
                 +
-000079 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-00007a b928     +out FT245_DataPort , RCommandByte
-00007b 985c     +cbi FT245_StatusPort , FT245_WrBit
+0000f9 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+0000fa b928     +out FT245_DataPort , RCommandByte
+0000fb 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RCommandByte
                 +
                 +
                 +
-00007c e010     +ldi Rtemp , 0x00
+0000fc e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-00007d b917     +out FT245_DataDDR , RTemp
+0000fd b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0x00
                 +FT245_SetInput
                  FT245_SendByte RCommandByte
-00007e e023      ldi RCommandByte,3
+0000fe e023      ldi RCommandByte,3
                 +
                 +
                 +FT245_WaitForWriteLoop :
-00007f 994f     +sbic FT245_StatusPin , FT245_TxeBit
-000080 cffe     +rjmp FT245_WaitForWriteLoop
+0000ff 994f     +sbic FT245_StatusPin , FT245_TxeBit
+000100 cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-000081 ef1f     +ldi Rtemp , 0xff
+000101 ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-000082 b917     +out FT245_DataDDR , RTemp
+000102 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -1940,36 +2099,36 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +FT245_SetOutput
                 +
                 +
-000083 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-000084 b928     +out FT245_DataPort , RCommandByte
-000085 985c     +cbi FT245_StatusPort , FT245_WrBit
+000103 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+000104 b928     +out FT245_DataPort , RCommandByte
+000105 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RCommandByte
                 +
                 +
                 +
-000086 e010     +ldi Rtemp , 0x00
+000106 e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-000087 b917     +out FT245_DataDDR , RTemp
+000107 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0x00
                 +FT245_SetInput
                  FT245_SendByte RCommandByte
-000088 e021      ldi RCommandByte,VersionHigh
+000108 e021      ldi RCommandByte,VersionHigh
                 +
                 +
                 +FT245_WaitForWriteLoop :
-000089 994f     +sbic FT245_StatusPin , FT245_TxeBit
-00008a cffe     +rjmp FT245_WaitForWriteLoop
+000109 994f     +sbic FT245_StatusPin , FT245_TxeBit
+00010a cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-00008b ef1f     +ldi Rtemp , 0xff
+00010b ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-00008c b917     +out FT245_DataDDR , RTemp
+00010c b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -1977,36 +2136,36 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +FT245_SetOutput
                 +
                 +
-00008d 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-00008e b928     +out FT245_DataPort , RCommandByte
-00008f 985c     +cbi FT245_StatusPort , FT245_WrBit
+00010d 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+00010e b928     +out FT245_DataPort , RCommandByte
+00010f 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RCommandByte
                 +
                 +
                 +
-000090 e010     +ldi Rtemp , 0x00
+000110 e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-000091 b917     +out FT245_DataDDR , RTemp
+000111 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0x00
                 +FT245_SetInput
                  FT245_SendByte RCommandByte
-000092 e021      ldi RCommandByte,VersionLow
+000112 e021      ldi RCommandByte,VersionLow
                 +
                 +
                 +FT245_WaitForWriteLoop :
-000093 994f     +sbic FT245_StatusPin , FT245_TxeBit
-000094 cffe     +rjmp FT245_WaitForWriteLoop
+000113 994f     +sbic FT245_StatusPin , FT245_TxeBit
+000114 cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-000095 ef1f     +ldi Rtemp , 0xff
+000115 ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-000096 b917     +out FT245_DataDDR , RTemp
+000116 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -2014,17 +2173,17 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +FT245_SetOutput
                 +
                 +
-000097 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-000098 b928     +out FT245_DataPort , RCommandByte
-000099 985c     +cbi FT245_StatusPort , FT245_WrBit
+000117 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+000118 b928     +out FT245_DataPort , RCommandByte
+000119 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RCommandByte
                 +
                 +
                 +
-00009a e010     +ldi Rtemp , 0x00
+00011a e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-00009b b917     +out FT245_DataDDR , RTemp
+00011b b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -2034,89 +2193,89 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +
                 +
                 +FT245_WaitForWriteLoop :
-00009c 994f     +sbic FT245_StatusPin , FT245_TxeBit
-00009d cffe     +rjmp FT245_WaitForWriteLoop
+00011c 994f     +sbic FT245_StatusPin , FT245_TxeBit
+00011d cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-00009e ef1f     +ldi Rtemp , 0xff
+00011e ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-00009f b917     +out FT245_DataDDR , RTemp
+00011f b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0xff
                 +FT245_SetOutput
-0000a0 e411     +ldi RTemp , 'A'
+000120 e411     +ldi RTemp , 'A'
                 +
                 +
-0000a1 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-0000a2 b918     +out FT245_DataPort , RTemp
-0000a3 985c     +cbi FT245_StatusPort , FT245_WrBit
+000121 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+000122 b918     +out FT245_DataPort , RTemp
+000123 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RTemp
                 +
                 +
                 +
-0000a4 e010     +ldi Rtemp , 0x00
+000124 e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-0000a5 b917     +out FT245_DataDDR , RTemp
+000125 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0x00
                 +FT245_SetInput
                  FT245_SendAck
-0000a6 9508      ret
+000126 9508      ret
                  
                  ;Sets the ext port
                  ExtPort:
                 +
                 +FT245_WaitForReadLoop :
-0000a7 d056     +rcall LedAlternateBlink
-0000a8 994e     +sbic FT245_StatusPin , FT245_RxfBit
-0000a9 cffd     +rjmp FT245_WaitForReadLoop
+000127 d085     +rcall LedAlternateBlink
+000128 994e     +sbic FT245_StatusPin , FT245_RxfBit
+000129 cffd     +rjmp FT245_WaitForReadLoop
                    FT245_WaitForRead_PayLoad LedAlternateBlink
                 +
                 +
-0000aa 985d     +cbi FT245_StatusPort , FT245_RdBit
-0000ab 0000     +nop
-0000ac 0000     +nop
-0000ad b006     +in RData , FT245_DataPin
-0000ae 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+00012a 985d     +cbi FT245_StatusPort , FT245_RdBit
+00012b 0000     +nop
+00012c 0000     +nop
+00012d b006     +in RData , FT245_DataPin
+00012e 9a5d     +sbi FT245_StatusPort , FT245_RdBit
                    FT245_ReadByte RData
                 +
                 +
                 +FT245_WaitForWriteLoop :
-0000af 994f     +sbic FT245_StatusPin , FT245_TxeBit
-0000b0 cffe     +rjmp FT245_WaitForWriteLoop
+00012f 994f     +sbic FT245_StatusPin , FT245_TxeBit
+000130 cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-0000b1 ef1f     +ldi Rtemp , 0xff
+000131 ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-0000b2 b917     +out FT245_DataDDR , RTemp
+000132 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0xff
                 +FT245_SetOutput
-0000b3 e411     +ldi RTemp , 'A'
+000133 e411     +ldi RTemp , 'A'
                 +
                 +
-0000b4 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-0000b5 b918     +out FT245_DataPort , RTemp
-0000b6 985c     +cbi FT245_StatusPort , FT245_WrBit
+000134 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+000135 b918     +out FT245_DataPort , RTemp
+000136 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RTemp
                 +
                 +
                 +
-0000b7 e010     +ldi Rtemp , 0x00
+000137 e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-0000b8 b917     +out FT245_DataDDR , RTemp
+000138 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -2126,16 +2285,16 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +
                 +  .if ExtPort < 0x40
                 +out ExtPort , RData
-0000b9 9200 00a7+  .else 
+000139 9200 0127+  .else 
                 +sts ExtPort , RData
                    WritePort ExtPort,RData
-0000bb 9508      ret
+00013b 9508      ret
                  
                  ;Clears the data buffer
                  ClearDataBuffer:
                 +
                 +        .if Led_Port < 0x20
-0000bc 9a5a     +sbi Led_Port , Led_Yellow_Bit
+00013c 9a5a     +sbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    SetPortBit Led_Port,Led_Yellow_Bit
@@ -2143,99 +2302,252 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +
                 +
                 +FT245_WaitForWriteLoop :
-0000bd 994f     +sbic FT245_StatusPin , FT245_TxeBit
-0000be cffe     +rjmp FT245_WaitForWriteLoop
+00013d 994f     +sbic FT245_StatusPin , FT245_TxeBit
+00013e cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-0000bf ef1f     +ldi Rtemp , 0xff
+00013f ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-0000c0 b917     +out FT245_DataDDR , RTemp
+000140 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0xff
                 +FT245_SetOutput
-0000c1 e411     +ldi RTemp , 'A'
+000141 e411     +ldi RTemp , 'A'
                 +
                 +
-0000c2 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-0000c3 b918     +out FT245_DataPort , RTemp
-0000c4 985c     +cbi FT245_StatusPort , FT245_WrBit
+000142 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+000143 b918     +out FT245_DataPort , RTemp
+000144 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RTemp
                 +
                 +
                 +
-0000c5 e010     +ldi Rtemp , 0x00
+000145 e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-0000c6 b917     +out FT245_DataDDR , RTemp
+000146 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0x00
                 +FT245_SetInput
                    FT245_SendAck
-0000c7 e0b1        LDI XH,HIGH(DataBuffer)
-0000c8 e0a0        LDI XL,LOW(DataBuffer)
+000147 e0b1        LDI XH,HIGH(DataBuffer)
+000148 e0a0        LDI XL,LOW(DataBuffer)
                  
-0000c9 e39f        ldi RBufferLoopCounterHigh,HIGH(DataBufferSize) 
-0000ca ec80        ldi RBufferLoopCounter,LOW(DataBufferSize)
+000149 e39f        ldi RBufferLoopCounterHigh,HIGH(DataBufferSize) 
+00014a ec80        ldi RBufferLoopCounter,LOW(DataBufferSize)
                  
-0000cb e010        ldi Rtemp,0
+00014b e010        ldi Rtemp,0
                    ClearDataBufferLoop: 
-0000cc 931d           ST X+,RTemp
-0000cd 9701      	 sbiw RBufferLoopCounter,1
-0000ce f7e9         brne ClearDataBufferLoop 
+00014c 931d           ST X+,RTemp
+00014d 9701      	 sbiw RBufferLoopCounter,1
+00014e f7e9         brne ClearDataBufferLoop 
                  
                 +
                 +        .if Led_Port < 0x20
-0000cf 985a     +cbi Led_Port , Led_Yellow_Bit
+00014f 985a     +cbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    ClearPortBit Led_Port,Led_Yellow_Bit
                  
-0000d0 9508      ret
+000150 9508      ret
+                 
+                 SendData:
+                +
+                +        .if Led_Port < 0x20
+000151 9a5a     +sbi Led_Port , Led_Yellow_Bit
+                +		.else 
+                +ReadPort Led_Port , RTemp
+                   SetPortBit Led_Port,Led_Yellow_Bit
+                   //Read number of bytes to send
+                +
+                +FT245_WaitForReadLoop :
+000152 d05a     +rcall LedAlternateBlink
+000153 994e     +sbic FT245_StatusPin , FT245_RxfBit
+000154 cffd     +rjmp FT245_WaitForReadLoop
+                   FT245_WaitForRead_PayLoad LedAlternateBlink
+                +
+                +
+000155 985d     +cbi FT245_StatusPort , FT245_RdBit
+000156 0000     +nop
+000157 0000     +nop
+000158 b196     +in RBufferLoopCounterHigh , FT245_DataPin
+000159 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+                   FT245_ReadByte RBufferLoopCounterHigh
+00015a 0000        nop
+00015b 0000        nop
+                +
+                +FT245_WaitForReadLoop :
+00015c d050     +rcall LedAlternateBlink
+00015d 994e     +sbic FT245_StatusPin , FT245_RxfBit
+00015e cffd     +rjmp FT245_WaitForReadLoop
+                   FT245_WaitForRead_PayLoad LedAlternateBlink
+                +
+                +
+00015f 985d     +cbi FT245_StatusPort , FT245_RdBit
+000160 0000     +nop
+000161 0000     +nop
+000162 b186     +in RBufferLoopCounter , FT245_DataPin
+000163 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+                   FT245_ReadByte RBufferLoopCounter
+                 
+                +
+                +        .if Led_Port < 0x20
+000164 9a5a     +sbi Led_Port , Led_Yellow_Bit
+                +		.else 
+                +ReadPort Led_Port , RTemp
+                     SetPortBit Led_Port,Led_Yellow_Bit
+                +
+                +        .if Led_Port < 0x20
+000165 985b     +cbi Led_Port , Led_Red_Bit
+                +		.else 
+                +ReadPort Led_Port , RTemp
+                   ClearPortBit Led_Port,Led_Red_Bit
+                 
+                       //Load starting address of data buffer
+000166 e0b1        LDI XH,HIGH(DataBuffer)
+000167 e0a0        LDI XL,LOW(DataBuffer)
+                 
+                 
+                   SendData_Loop:
+                     
+                 
+000168 900d      	ld RData, x+
+                +
+                +
+                +FT245_WaitForWriteLoop :
+000169 994f     +sbic FT245_StatusPin , FT245_TxeBit
+00016a cffe     +rjmp FT245_WaitForWriteLoop
+                +FT245_WaitForWrite
+                +
+                +
+00016b ef1f     +ldi Rtemp , 0xff
+                +
+                +  .if FT245_DataDDR < 0x40
+00016c b917     +out FT245_DataDDR , RTemp
+                +  .else 
+                +sts FT245_DataDDR , RTemp
+                +WritePort FT245_DataDDR , RTemp
+                +WritePortValue FT245_DataDDR , 0xff
+                +FT245_SetOutput
+                +
+                +
+00016d 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+00016e b808     +out FT245_DataPort , RData
+00016f 985c     +cbi FT245_StatusPort , FT245_WrBit
+                +FT245_WriteByte RData
+                +
+                +
+                +
+000170 e010     +ldi Rtemp , 0x00
+                +
+                +  .if FT245_DataDDR < 0x40
+000171 b917     +out FT245_DataDDR , RTemp
+                +  .else 
+                +sts FT245_DataDDR , RTemp
+                +WritePort FT245_DataDDR , RTemp
+                +WritePortValue FT245_DataDDR , 0x00
+                +FT245_SetInput
+                     FT245_SendByte RData
+                 
+                 		
+                   //     FT245_SendByte RData
+                   //    FT245_SendByte RBufferLoopCounterHigh
+                 //	  FT245_SendByte RBufferLoopCounter
+                   
+000172 9701        sbiw RBufferLoopCounter,1
+000173 f7a1        brne SendData_Loop 
+                +
+                +
+                +FT245_WaitForWriteLoop :
+000174 994f     +sbic FT245_StatusPin , FT245_TxeBit
+000175 cffe     +rjmp FT245_WaitForWriteLoop
+                +FT245_WaitForWrite
+                +
+                +
+000176 ef1f     +ldi Rtemp , 0xff
+                +
+                +  .if FT245_DataDDR < 0x40
+000177 b917     +out FT245_DataDDR , RTemp
+                +  .else 
+                +sts FT245_DataDDR , RTemp
+                +WritePort FT245_DataDDR , RTemp
+                +WritePortValue FT245_DataDDR , 0xff
+                +FT245_SetOutput
+000178 e411     +ldi RTemp , 'A'
+                +
+                +
+000179 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+00017a b918     +out FT245_DataPort , RTemp
+00017b 985c     +cbi FT245_StatusPort , FT245_WrBit
+                +FT245_WriteByte RTemp
+                +
+                +
+                +
+00017c e010     +ldi Rtemp , 0x00
+                +
+                +  .if FT245_DataDDR < 0x40
+00017d b917     +out FT245_DataDDR , RTemp
+                +  .else 
+                +sts FT245_DataDDR , RTemp
+                +WritePort FT245_DataDDR , RTemp
+                +WritePortValue FT245_DataDDR , 0x00
+                +FT245_SetInput
+                   FT245_SendAck
+                 
+                +
+                +        .if Led_Port < 0x20
+00017e 985a     +cbi Led_Port , Led_Yellow_Bit
+                +		.else 
+                +ReadPort Led_Port , RTemp
+                   ClearPortBit Led_Port,Led_Yellow_Bit
+                 
+00017f 9508      ret
+                 
                  
                  //Receives data from the FT245
                  ReceiveData:
                 +
                 +        .if Led_Port < 0x20
-0000d1 9a5a     +sbi Led_Port , Led_Yellow_Bit
+000180 9a5a     +sbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    SetPortBit Led_Port,Led_Yellow_Bit
                    //Read number of bytes to receive
                 +
                 +FT245_WaitForReadLoop :
-0000d2 d02b     +rcall LedAlternateBlink
-0000d3 994e     +sbic FT245_StatusPin , FT245_RxfBit
-0000d4 cffd     +rjmp FT245_WaitForReadLoop
+000181 d02b     +rcall LedAlternateBlink
+000182 994e     +sbic FT245_StatusPin , FT245_RxfBit
+000183 cffd     +rjmp FT245_WaitForReadLoop
                    FT245_WaitForRead_PayLoad LedAlternateBlink
                 +
                 +
-0000d5 985d     +cbi FT245_StatusPort , FT245_RdBit
-0000d6 0000     +nop
-0000d7 0000     +nop
-0000d8 b196     +in RBufferLoopCounterHigh , FT245_DataPin
-0000d9 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+000184 985d     +cbi FT245_StatusPort , FT245_RdBit
+000185 0000     +nop
+000186 0000     +nop
+000187 b196     +in RBufferLoopCounterHigh , FT245_DataPin
+000188 9a5d     +sbi FT245_StatusPort , FT245_RdBit
                    FT245_ReadByte RBufferLoopCounterHigh
-0000da 0000        nop
-0000db 0000        nop
+000189 0000        nop
+00018a 0000        nop
                 +
                 +FT245_WaitForReadLoop :
-0000dc d021     +rcall LedAlternateBlink
-0000dd 994e     +sbic FT245_StatusPin , FT245_RxfBit
-0000de cffd     +rjmp FT245_WaitForReadLoop
+00018b d021     +rcall LedAlternateBlink
+00018c 994e     +sbic FT245_StatusPin , FT245_RxfBit
+00018d cffd     +rjmp FT245_WaitForReadLoop
                    FT245_WaitForRead_PayLoad LedAlternateBlink
                 +
                 +
-0000df 985d     +cbi FT245_StatusPort , FT245_RdBit
-0000e0 0000     +nop
-0000e1 0000     +nop
-0000e2 b186     +in RBufferLoopCounter , FT245_DataPin
-0000e3 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+00018e 985d     +cbi FT245_StatusPort , FT245_RdBit
+00018f 0000     +nop
+000190 0000     +nop
+000191 b186     +in RBufferLoopCounter , FT245_DataPin
+000192 9a5d     +sbi FT245_StatusPort , FT245_RdBit
                    FT245_ReadByte RBufferLoopCounter
                        
                  
@@ -2243,76 +2555,76 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                  
                 +
                 +        .if Led_Port < 0x20
-0000e4 9a5a     +sbi Led_Port , Led_Yellow_Bit
+000193 9a5a     +sbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    SetPortBit Led_Port,Led_Yellow_Bit
                 +
                 +        .if Led_Port < 0x20
-0000e5 985b     +cbi Led_Port , Led_Red_Bit
+000194 985b     +cbi Led_Port , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    ClearPortBit Led_Port,Led_Red_Bit
                  
                  
                      //Load starting address of data buffer
-0000e6 e0b1        LDI XH,HIGH(DataBuffer)
-0000e7 e0a0        LDI XL,LOW(DataBuffer)
+000195 e0b1        LDI XH,HIGH(DataBuffer)
+000196 e0a0        LDI XL,LOW(DataBuffer)
                  
                    ReceiveData_Loop:
                 +
                 +FT245_WaitForReadLoop :
-0000e8 994e     +sbic FT245_StatusPin , FT245_RxfBit
-0000e9 cffe     +rjmp FT245_WaitForReadLoop
+000197 994e     +sbic FT245_StatusPin , FT245_RxfBit
+000198 cffe     +rjmp FT245_WaitForReadLoop
                      FT245_WaitForRead
                  
                 +
                 +
-0000ea 985d     +cbi FT245_StatusPort , FT245_RdBit
-0000eb 0000     +nop
-0000ec 0000     +nop
-0000ed b006     +in RData , FT245_DataPin
-0000ee 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+000199 985d     +cbi FT245_StatusPort , FT245_RdBit
+00019a 0000     +nop
+00019b 0000     +nop
+00019c b006     +in RData , FT245_DataPin
+00019d 9a5d     +sbi FT245_StatusPort , FT245_RdBit
                      FT245_ReadByte RData
-0000ef 920d      	st x+,RData
+00019e 920d      	st x+,RData
                  		
                    //     FT245_SendByte RData
                    //    FT245_SendByte RBufferLoopCounterHigh
                  //	  FT245_SendByte RBufferLoopCounter
                    
-0000f0 9701        sbiw RBufferLoopCounter,1
-0000f1 f7b1        brne ReceiveData_Loop 
+00019f 9701        sbiw RBufferLoopCounter,1
+0001a0 f7b1        brne ReceiveData_Loop 
                 +
                 +
                 +FT245_WaitForWriteLoop :
-0000f2 994f     +sbic FT245_StatusPin , FT245_TxeBit
-0000f3 cffe     +rjmp FT245_WaitForWriteLoop
+0001a1 994f     +sbic FT245_StatusPin , FT245_TxeBit
+0001a2 cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-0000f4 ef1f     +ldi Rtemp , 0xff
+0001a3 ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-0000f5 b917     +out FT245_DataDDR , RTemp
+0001a4 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0xff
                 +FT245_SetOutput
-0000f6 e411     +ldi RTemp , 'A'
+0001a5 e411     +ldi RTemp , 'A'
                 +
                 +
-0000f7 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-0000f8 b918     +out FT245_DataPort , RTemp
-0000f9 985c     +cbi FT245_StatusPort , FT245_WrBit
+0001a6 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+0001a7 b918     +out FT245_DataPort , RTemp
+0001a8 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RTemp
                 +
                 +
                 +
-0000fa e010     +ldi Rtemp , 0x00
+0001a9 e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-0000fb b917     +out FT245_DataDDR , RTemp
+0001aa b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -2322,90 +2634,90 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                  
                 +
                 +        .if Led_Port < 0x20
-0000fc 985a     +cbi Led_Port , Led_Yellow_Bit
+0001ab 985a     +cbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    ClearPortBit Led_Port,Led_Yellow_Bit
                  
-0000fd 9508      ret
+0001ac 9508      ret
                  
                  LedAlternateBlink:
-0000fe 9533        inc RL0
-0000ff 3038        cpi RL0,8
-000100 f058        brlo LedAlternateBlinkExit
-000101 e030          ldi RL0,0
-000102 9503          inc RL1
-000103 f441      	brne LedAlternateBlinkExit
-000104 9543      	inc RL2
-000105 3840      	cpi RL2,0x80
-000106 f418      	BRSH LedAlternateBlinkOther
+0001ad 9533        inc RL0
+0001ae 3038        cpi RL0,8
+0001af f058        brlo LedAlternateBlinkExit
+0001b0 e030          ldi RL0,0
+0001b1 9503          inc RL1
+0001b2 f441      	brne LedAlternateBlinkExit
+0001b3 9543      	inc RL2
+0001b4 3840      	cpi RL2,0x80
+0001b5 f418      	BRSH LedAlternateBlinkOther
                 +
                 +        .if Led_Port < 0x20
-000107 9a5a     +sbi Led_Port , Led_Yellow_Bit
+0001b6 9a5a     +sbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	   SetPortBit Led_Port,Led_Yellow_Bit
                 +
                 +        .if Led_Port < 0x20
-000108 985b     +cbi Led_Port , Led_Red_Bit
+0001b7 985b     +cbi Led_Port , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                         ClearPortBit Led_Port,Led_Red_Bit
-000109 c002      	rjmp LedAlternateBlinkExit
+0001b8 c002      	rjmp LedAlternateBlinkExit
                  	LedAlternateBlinkOther:
                 +
                 +        .if Led_Port < 0x20
-00010a 985a     +cbi Led_Port , Led_Yellow_Bit
+0001b9 985a     +cbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	   ClearPortBit Led_Port,Led_Yellow_Bit
                 +
                 +        .if Led_Port < 0x20
-00010b 9a5b     +sbi Led_Port , Led_Red_Bit
+0001ba 9a5b     +sbi Led_Port , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	   SetPortBit Led_Port,Led_Red_Bit
                    LedAlternateBlinkExit:
-00010c 9508      ret
+0001bb 9508      ret
                  
                  LedBothBlink:
-00010d 9533        inc RL0
-00010e 3330        cpi RL0,0x30
-00010f f459        brne LedBothBlinkExit
-000110 e030          ldi RL0,0
-000111 9503          inc RL1
-000112 f441      	brne LedBothBlinkExit
-000113 9543      	inc RL2
-000114 3140      	cpi RL2,0x10
-000115 f418      	BRSH LedBothBlinkOther
+0001bc 9533        inc RL0
+0001bd 3330        cpi RL0,0x30
+0001be f459        brne LedBothBlinkExit
+0001bf e030          ldi RL0,0
+0001c0 9503          inc RL1
+0001c1 f441      	brne LedBothBlinkExit
+0001c2 9543      	inc RL2
+0001c3 3140      	cpi RL2,0x10
+0001c4 f418      	BRSH LedBothBlinkOther
                 +
                 +        .if Led_Port < 0x20
-000116 9a5a     +sbi Led_Port , Led_Yellow_Bit
+0001c5 9a5a     +sbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	   SetPortBit Led_Port,Led_Yellow_Bit
                 +
                 +        .if Led_Port < 0x20
-000117 9a5b     +sbi Led_Port , Led_Red_Bit
+0001c6 9a5b     +sbi Led_Port , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                         SetPortBit Led_Port,Led_Red_Bit
-000118 c002      	rjmp LedBothBlinkExit
+0001c7 c002      	rjmp LedBothBlinkExit
                  	LedBothBlinkOther:
                 +
                 +        .if Led_Port < 0x20
-000119 985a     +cbi Led_Port , Led_Yellow_Bit
+0001c8 985a     +cbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	   ClearPortBit Led_Port,Led_Yellow_Bit
                 +
                 +        .if Led_Port < 0x20
-00011a 985b     +cbi Led_Port , Led_Red_Bit
+0001c9 985b     +cbi Led_Port , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	   ClearPortBit Led_Port,Led_Red_Bit
                    LedBothBlinkExit:
-00011b 9508      ret
+0001ca 9508      ret
                  
                  
                  
@@ -2416,51 +2728,51 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                    //Read number of bytes to send
                 +
                 +FT245_WaitForReadLoop :
-00011c dfe1     +rcall LedAlternateBlink
-00011d 994e     +sbic FT245_StatusPin , FT245_RxfBit
-00011e cffd     +rjmp FT245_WaitForReadLoop
+0001cb dfe1     +rcall LedAlternateBlink
+0001cc 994e     +sbic FT245_StatusPin , FT245_RxfBit
+0001cd cffd     +rjmp FT245_WaitForReadLoop
                    FT245_WaitForRead_PayLoad LedAlternateBlink
                 +
                 +
-00011f 985d     +cbi FT245_StatusPort , FT245_RdBit
-000120 0000     +nop
-000121 0000     +nop
-000122 b196     +in RBufferLoopCounterHigh , FT245_DataPin
-000123 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+0001ce 985d     +cbi FT245_StatusPort , FT245_RdBit
+0001cf 0000     +nop
+0001d0 0000     +nop
+0001d1 b196     +in RBufferLoopCounterHigh , FT245_DataPin
+0001d2 9a5d     +sbi FT245_StatusPort , FT245_RdBit
                    FT245_ReadByte RBufferLoopCounterHigh
-000124 0000        nop
-000125 0000        nop
+0001d3 0000        nop
+0001d4 0000        nop
                 +
                 +FT245_WaitForReadLoop :
-000126 dfd7     +rcall LedAlternateBlink
-000127 994e     +sbic FT245_StatusPin , FT245_RxfBit
-000128 cffd     +rjmp FT245_WaitForReadLoop
+0001d5 dfd7     +rcall LedAlternateBlink
+0001d6 994e     +sbic FT245_StatusPin , FT245_RxfBit
+0001d7 cffd     +rjmp FT245_WaitForReadLoop
                    FT245_WaitForRead_PayLoad LedAlternateBlink
                 +
                 +
-000129 985d     +cbi FT245_StatusPort , FT245_RdBit
-00012a 0000     +nop
-00012b 0000     +nop
-00012c b186     +in RBufferLoopCounter , FT245_DataPin
-00012d 9a5d     +sbi FT245_StatusPort , FT245_RdBit
+0001d8 985d     +cbi FT245_StatusPort , FT245_RdBit
+0001d9 0000     +nop
+0001da 0000     +nop
+0001db b186     +in RBufferLoopCounter , FT245_DataPin
+0001dc 9a5d     +sbi FT245_StatusPort , FT245_RdBit
                    FT245_ReadByte RBufferLoopCounter
                  
                 +
                 +        .if Led_Port < 0x20
-00012e 985a     +cbi Led_Port , Led_Yellow_Bit
+0001dd 985a     +cbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                    	   ClearPortBit Led_Port,Led_Yellow_Bit
                 +
                 +        .if Led_Port < 0x20
-00012f 9a5b     +sbi Led_Port , Led_Red_Bit
+0001de 9a5b     +sbi Led_Port , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	   SetPortBit Led_Port,Led_Red_Bit
                  
                    //Load starting address of data buffer
-000130 e0b1        LDI XH,HIGH(DataBuffer)
-000131 e0a0        LDI XL,LOW(DataBuffer)
+0001df e0b1        LDI XH,HIGH(DataBuffer)
+0001e0 e0a0        LDI XL,LOW(DataBuffer)
                  
                  
                  
@@ -2469,402 +2781,402 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                  // So before changing anything, be sure your head is well screwed on and you know what you're doing. ;)
                  
                  	Channel_loop_800:
-000132 900d      		ld RData,x+                                                ;1 to 3 (likely 2)
-000133 0000      		nop			                                            ;1
-000134 0000      		nop														;1  additional nop for 20mhz
+0001e1 900d      		ld RData,x+                                                ;1 to 3 (likely 2)
+0001e2 0000      		nop			                                            ;1
+0001e3 0000      		nop														;1  additional nop for 20mhz
                  
                  		;-------- Bit0
-000135 0c00      		lsl RData                                               ;1
-000136 f478      		brcc Bit0_0_800                                         ;1 or 2 on branch
+0001e4 0c00      		lsl RData                                               ;1
+0001e5 f478      		brcc Bit0_0_800                                         ;1 or 2 on branch
                  
                  
                  		Bit0_1_800:
-000137 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
+0001e6 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
                  
-000138 9a59      		Sbi WS2811_Port, WS2811_Bit                             ;2  High 13 cycles
-000139 0000      		nop                                                     ;1
-00013a 0000      		nop                                                     ;1
-00013b 0000      		nop                                                     ;1
-00013c 0000      		nop                                                     ;1
-00013d 0000      		NOP                                                     ;1
-00013e 0000      		NOP                                                     ;1
-00013f 0000      		NOP                                                     ;1
-000140 0000      		NOP                                                     ;1
-000141 0000      		nop														;1  additional nop for 20mhz
-000142 0000      		nop														;1  additional nop for 20mhz
-000143 0000      		nop														;1  additional nop for 20mhz
+0001e7 9a59      		Sbi WS2811_Port, WS2811_Bit                             ;2  High 13 cycles
+0001e8 0000      		nop                                                     ;1
+0001e9 0000      		nop                                                     ;1
+0001ea 0000      		nop                                                     ;1
+0001eb 0000      		nop                                                     ;1
+0001ec 0000      		NOP                                                     ;1
+0001ed 0000      		NOP                                                     ;1
+0001ee 0000      		NOP                                                     ;1
+0001ef 0000      		NOP                                                     ;1
+0001f0 0000      		nop														;1  additional nop for 20mhz
+0001f1 0000      		nop														;1  additional nop for 20mhz
+0001f2 0000      		nop														;1  additional nop for 20mhz
                  
-000144 9859      		cbi WS2811_Port, WS2811_Bit                             ;2  Low
-000145 c00f      		rjmp Bit0_Tail_800                                      ;2
+0001f3 9859      		cbi WS2811_Port, WS2811_Bit                             ;2  Low
+0001f4 c00f      		rjmp Bit0_Tail_800                                      ;2
                  
                  		Bit0_0_800:
-000146 9a59      		Sbi WS2811_Port, WS2811_Bit                             ;2   High 5 cycles
-000147 0000      		nop                                                     ;1
-000148 0000      		NOP                                                     ;1
-000149 0000      		nop														;1  additional nop for 20mhz
+0001f5 9a59      		Sbi WS2811_Port, WS2811_Bit                             ;2   High 5 cycles
+0001f6 0000      		nop                                                     ;1
+0001f7 0000      		NOP                                                     ;1
+0001f8 0000      		nop														;1  additional nop for 20mhz
                  
-00014a 9859      		cbi WS2811_Port, WS2811_Bit                             ;2  Low
-00014b 0000      		NOP                                                     ;1
-00014c 0000      		NOP                                                     ;1
-00014d 0000      		NOP                                                     ;1
-00014e 0000      		NOP                                                     ;1
-00014f 0000      		NOP                                                     ;1
-000150 0000      		NOP                                                     ;1
-000151 0000      		NOP                                                     ;1
-000152 0000      		NOP                                                     ;1
-000153 0000      		nop														;1  additional nop for 20mhz
-000154 0000      		nop														;1  additional nop for 20mhz
-                 
-                 		Bit0_tail_800:
-000155 0000      		Nop                                                     ;1
-000156 0000      		NOP                                                     ;1
-000157 0000      		NOP                                                     ;1
-000158 0000      		nop														;1  additional nop for 20mhz
-                 
-                 			;-------- Bit1
-000159 0c00      		lsl RData                                                  ;1
-00015a f478      		brcc Bit1_0_800                                         ;1 or 2 on branch
-                 
-                 
-                 		Bit1_1_800:
-00015b 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
-                 
-00015c 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
-00015d 0000      		nop                                                     ;1
-00015e 0000      		nop                                                     ;1
-00015f 0000      		nop                                                     ;1
-000160 0000      		nop                                                     ;1
-000161 0000      		NOP                                                     ;1
-000162 0000      		NOP                                                     ;1
-000163 0000      		NOP                                                     ;1
-000164 0000      		NOP                                                     ;1
-000165 0000      		nop														;1  additional nop for 20mhz
-000166 0000      		nop														;1  additional nop for 20mhz
-000167 0000      		nop														;1  additional nop for 20mhz
-                 
-000168 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-000169 c00f      		rjmp Bit1_Tail_800                                      ;2
-                 
-                 		Bit1_0_800:
-00016a 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
-00016b 0000      		nop                                                     ;1
-00016c 0000      		NOP                                                     ;1
-00016d 0000      		nop														;1  additional nop for 20mhz
-                 
-00016e 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-00016f 0000      		NOP                                                     ;1
-000170 0000      		NOP                                                     ;1
-000171 0000      		NOP                                                     ;1
-000172 0000      		NOP                                                     ;1
-000173 0000      		NOP                                                     ;1
-000174 0000      		NOP                                                     ;1
-000175 0000      		NOP                                                     ;1
-000176 0000      		NOP                                                     ;1
-000177 0000      		nop														;1  additional nop for 20mhz
-000178 0000      		nop														;1  additional nop for 20mhz
-                 
-                 		Bit1_tail_800:
-000179 0000      		Nop                                                     ;1
-00017a 0000      		NOP                                                     ;1
-00017b 0000      		NOP                                                     ;1
-00017c 0000      		nop														;1  additional nop for 20mhz
-                 
-                 			   ;-------- Bit2
-00017d 0c00      		lsl RData                                                  ;1
-00017e f478      		brcc Bit2_0_800                                         ;1 or 2 on branch
-                 
-                 
-                 		Bit2_1_800:
-00017f 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
-                 
-000180 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
-000181 0000      		nop                                                     ;1
-000182 0000      		nop                                                     ;1
-000183 0000      		nop                                                     ;1
-000184 0000      		nop                                                     ;1
-000185 0000      		NOP                                                     ;1
-000186 0000      		NOP                                                     ;1
-000187 0000      		NOP                                                     ;1
-000188 0000      		NOP                                                     ;1
-000189 0000      		nop														;1  additional nop for 20mhz
-00018a 0000      		nop														;1  additional nop for 20mhz
-00018b 0000      		nop														;1  additional nop for 20mhz
-                 
-00018c 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-00018d c00f      		rjmp Bit2_Tail_800                                      ;2
-                 
-                 		Bit2_0_800:
-00018e 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
-00018f 0000      		nop                                                     ;1
-000190 0000      		NOP                                                     ;1
-000191 0000      		nop														;1  additional nop for 20mhz
-                 
-000192 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-000193 0000      		NOP                                                     ;1
-000194 0000      		NOP                                                     ;1
-000195 0000      		NOP                                                     ;1
-000196 0000      		NOP                                                     ;1
-000197 0000      		NOP                                                     ;1
-000198 0000      		NOP                                                     ;1
-000199 0000      		NOP                                                     ;1
-00019a 0000      		NOP                                                     ;1
-00019b 0000      		nop														;1  additional nop for 20mhz
-00019c 0000      		nop														;1  additional nop for 20mhz
-                 
-                 		Bit2_tail_800:
-00019d 0000      		Nop                                                     ;1
-00019e 0000      		NOP                                                     ;1
-00019f 0000      		NOP                                                     ;1
-0001a0 0000      		nop														;1  additional nop for 20mhz
-                 
-                 			;-------- bit3
-0001a1 0c00      		lsl RData                                                  ;1
-0001a2 f478      		brcc bit3_0_800                                         ;1 or 2 on branch
-                 
-                 
-                 		Bit3_1_800:
-0001a3 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
-                 
-0001a4 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
-0001a5 0000      		nop                                                     ;1
-0001a6 0000      		nop                                                     ;1
-0001a7 0000      		nop                                                     ;1
-0001a8 0000      		nop                                                     ;1
-0001a9 0000      		NOP                                                     ;1
-0001aa 0000      		NOP                                                     ;1
-0001ab 0000      		NOP                                                     ;1
-0001ac 0000      		NOP                                                     ;1
-0001ad 0000      		nop														;1  additional nop for 20mhz
-0001ae 0000      		nop														;1  additional nop for 20mhz
-0001af 0000      		nop														;1  additional nop for 20mhz
-                 
-0001b0 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-0001b1 c00f      		rjmp bit3_Tail_800                                      ;2
-                 
-                 		Bit3_0_800:
-0001b2 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
-0001b3 0000      		nop                                                     ;1
-0001b4 0000      		NOP                                                     ;1
-0001b5 0000      		nop														;1  additional nop for 20mhz
-                 
-0001b6 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-0001b7 0000      		NOP                                                     ;1
-0001b8 0000      		NOP                                                     ;1
-0001b9 0000      		NOP                                                     ;1
-0001ba 0000      		NOP                                                     ;1
-0001bb 0000      		NOP                                                     ;1
-0001bc 0000      		NOP                                                     ;1
-0001bd 0000      		NOP                                                     ;1
-0001be 0000      		NOP                                                     ;1
-0001bf 0000      		nop														;1  additional nop for 20mhz
-0001c0 0000      		nop														;1  additional nop for 20mhz
-                 
-                 		Bit3_tail_800:
-0001c1 0000      		Nop                                                     ;1
-0001c2 0000      		NOP                                                     ;1
-0001c3 0000      		NOP                                                     ;1
-0001c4 0000      		nop														;1  additional nop for 20mhz
-                 
-                 			;-------- bit4
-0001c5 0c00      		lsl RData                                                  ;1
-0001c6 f478      		brcc bit4_0_800                                         ;1 or 2 on branch
-                 
-                 
-                 		Bit4_1_800:
-0001c7 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
-                 
-0001c8 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
-0001c9 0000      		nop                                                     ;1
-0001ca 0000      		nop                                                     ;1
-0001cb 0000      		nop                                                     ;1
-0001cc 0000      		nop                                                     ;1
-0001cd 0000      		NOP                                                     ;1
-0001ce 0000      		NOP                                                     ;1
-0001cf 0000      		NOP                                                     ;1
-0001d0 0000      		NOP                                                     ;1
-0001d1 0000      		nop														;1  additional nop for 20mhz
-0001d2 0000      		nop														;1  additional nop for 20mhz
-0001d3 0000      		nop														;1  additional nop for 20mhz
-                 
-0001d4 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-0001d5 c00f      		rjmp bit4_Tail_800                                      ;2
-                 
-                 		Bit4_0_800:
-0001d6 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
-0001d7 0000      		nop                                                     ;1
-0001d8 0000      		NOP                                                     ;1
-0001d9 0000      		nop														;1  additional nop for 20mhz
-                 
-0001da 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-0001db 0000      		NOP                                                     ;1
-0001dc 0000      		NOP                                                     ;1
-0001dd 0000      		NOP                                                     ;1
-0001de 0000      		NOP                                                     ;1
-0001df 0000      		NOP                                                     ;1
-0001e0 0000      		NOP                                                     ;1
-0001e1 0000      		NOP                                                     ;1
-0001e2 0000      		NOP                                                     ;1
-0001e3 0000      		nop														;1  additional nop for 20mhz
-0001e4 0000      		nop														;1  additional nop for 20mhz
-                 
-                 		Bit4_tail_800:
-0001e5 0000      		Nop                                                     ;1
-0001e6 0000      		NOP                                                     ;1
-0001e7 0000      		NOP                                                     ;1
-0001e8 0000      		nop														;1  additional nop for 20mhz
-                 
-                 			;-------- bit5
-0001e9 0c00      		lsl RData                                                  ;1
-0001ea f478      		brcc bit5_0_800                                         ;1 or 2 on branch
-                 
-                 
-                 		Bit5_1_800:
-0001eb 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
-                 
-0001ec 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
-0001ed 0000      		nop                                                     ;1
-0001ee 0000      		nop                                                     ;1
-0001ef 0000      		nop                                                     ;1
-0001f0 0000      		nop                                                     ;1
-0001f1 0000      		NOP                                                     ;1
-0001f2 0000      		NOP                                                     ;1
-0001f3 0000      		NOP                                                     ;1
-0001f4 0000      		NOP                                                     ;1
-0001f5 0000      		nop														;1  additional nop for 20mhz
-0001f6 0000      		nop														;1  additional nop for 20mhz
-0001f7 0000      		nop														;1  additional nop for 20mhz
-                 
-0001f8 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-0001f9 c00f      		rjmp bit5_Tail_800                                      ;2
-                 
-                 		Bit5_0_800:
-0001fa 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
-0001fb 0000      		nop                                                     ;1
+0001f9 9859      		cbi WS2811_Port, WS2811_Bit                             ;2  Low
+0001fa 0000      		NOP                                                     ;1
+0001fb 0000      		NOP                                                     ;1
 0001fc 0000      		NOP                                                     ;1
-0001fd 0000      		nop														;1  additional nop for 20mhz
-                 
-0001fe 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+0001fd 0000      		NOP                                                     ;1
+0001fe 0000      		NOP                                                     ;1
 0001ff 0000      		NOP                                                     ;1
 000200 0000      		NOP                                                     ;1
 000201 0000      		NOP                                                     ;1
-000202 0000      		NOP                                                     ;1
-000203 0000      		NOP                                                     ;1
-000204 0000      		NOP                                                     ;1
+000202 0000      		nop														;1  additional nop for 20mhz
+000203 0000      		nop														;1  additional nop for 20mhz
+                 
+                 		Bit0_tail_800:
+000204 0000      		Nop                                                     ;1
 000205 0000      		NOP                                                     ;1
 000206 0000      		NOP                                                     ;1
 000207 0000      		nop														;1  additional nop for 20mhz
-000208 0000      		nop														;1  additional nop for 20mhz
                  
-                 		Bit5_tail_800:
-000209 0000      		Nop                                                     ;1
-00020a 0000      		NOP                                                     ;1
-00020b 0000      		NOP                                                     ;1
-00020c 0000      		nop														;1  additional nop for 20mhz
-                 			   ;-------- bit6
-00020d 0c00      		lsl RData                                                  ;1
-00020e f478      		brcc bit6_0_800                                         ;1 or 2 on branch
+                 			;-------- Bit1
+000208 0c00      		lsl RData                                                  ;1
+000209 f478      		brcc Bit1_0_800                                         ;1 or 2 on branch
                  
                  
-                 		Bit6_1_800:
-00020f 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
+                 		Bit1_1_800:
+00020a 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
                  
-000210 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
-000211 0000      		nop                                                     ;1
-000212 0000      		nop                                                     ;1
-000213 0000      		nop                                                     ;1
-000214 0000      		nop                                                     ;1
-000215 0000      		NOP                                                     ;1
-000216 0000      		NOP                                                     ;1
-000217 0000      		NOP                                                     ;1
-000218 0000      		NOP                                                     ;1
-000219 0000      		nop														;1  additional nop for 20mhz
-00021a 0000      		nop														;1  additional nop for 20mhz
-00021b 0000      		nop														;1  additional nop for 20mhz
+00020b 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
+00020c 0000      		nop                                                     ;1
+00020d 0000      		nop                                                     ;1
+00020e 0000      		nop                                                     ;1
+00020f 0000      		nop                                                     ;1
+000210 0000      		NOP                                                     ;1
+000211 0000      		NOP                                                     ;1
+000212 0000      		NOP                                                     ;1
+000213 0000      		NOP                                                     ;1
+000214 0000      		nop														;1  additional nop for 20mhz
+000215 0000      		nop														;1  additional nop for 20mhz
+000216 0000      		nop														;1  additional nop for 20mhz
                  
-00021c 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
-00021d c00f      		rjmp bit6_Tail_800                                      ;2
+000217 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+000218 c00f      		rjmp Bit1_Tail_800                                      ;2
                  
-                 		Bit6_0_800:
-00021e 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
-00021f 0000      		nop                                                     ;1
+                 		Bit1_0_800:
+000219 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
+00021a 0000      		nop                                                     ;1
+00021b 0000      		NOP                                                     ;1
+00021c 0000      		nop														;1  additional nop for 20mhz
+                 
+00021d 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+00021e 0000      		NOP                                                     ;1
+00021f 0000      		NOP                                                     ;1
 000220 0000      		NOP                                                     ;1
-000221 0000      		nop														;1  additional nop for 20mhz
-                 
-000222 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+000221 0000      		NOP                                                     ;1
+000222 0000      		NOP                                                     ;1
 000223 0000      		NOP                                                     ;1
 000224 0000      		NOP                                                     ;1
 000225 0000      		NOP                                                     ;1
-000226 0000      		NOP                                                     ;1
-000227 0000      		NOP                                                     ;1
-000228 0000      		NOP                                                     ;1
+000226 0000      		nop														;1  additional nop for 20mhz
+000227 0000      		nop														;1  additional nop for 20mhz
+                 
+                 		Bit1_tail_800:
+000228 0000      		Nop                                                     ;1
 000229 0000      		NOP                                                     ;1
 00022a 0000      		NOP                                                     ;1
 00022b 0000      		nop														;1  additional nop for 20mhz
-00022c 0000      		nop														;1  additional nop for 20mhz
+                 
+                 			   ;-------- Bit2
+00022c 0c00      		lsl RData                                                  ;1
+00022d f478      		brcc Bit2_0_800                                         ;1 or 2 on branch
+                 
+                 
+                 		Bit2_1_800:
+00022e 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
+                 
+00022f 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
+000230 0000      		nop                                                     ;1
+000231 0000      		nop                                                     ;1
+000232 0000      		nop                                                     ;1
+000233 0000      		nop                                                     ;1
+000234 0000      		NOP                                                     ;1
+000235 0000      		NOP                                                     ;1
+000236 0000      		NOP                                                     ;1
+000237 0000      		NOP                                                     ;1
+000238 0000      		nop														;1  additional nop for 20mhz
+000239 0000      		nop														;1  additional nop for 20mhz
+00023a 0000      		nop														;1  additional nop for 20mhz
+                 
+00023b 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+00023c c00f      		rjmp Bit2_Tail_800                                      ;2
+                 
+                 		Bit2_0_800:
+00023d 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
+00023e 0000      		nop                                                     ;1
+00023f 0000      		NOP                                                     ;1
+000240 0000      		nop														;1  additional nop for 20mhz
+                 
+000241 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+000242 0000      		NOP                                                     ;1
+000243 0000      		NOP                                                     ;1
+000244 0000      		NOP                                                     ;1
+000245 0000      		NOP                                                     ;1
+000246 0000      		NOP                                                     ;1
+000247 0000      		NOP                                                     ;1
+000248 0000      		NOP                                                     ;1
+000249 0000      		NOP                                                     ;1
+00024a 0000      		nop														;1  additional nop for 20mhz
+00024b 0000      		nop														;1  additional nop for 20mhz
+                 
+                 		Bit2_tail_800:
+00024c 0000      		Nop                                                     ;1
+00024d 0000      		NOP                                                     ;1
+00024e 0000      		NOP                                                     ;1
+00024f 0000      		nop														;1  additional nop for 20mhz
+                 
+                 			;-------- bit3
+000250 0c00      		lsl RData                                                  ;1
+000251 f478      		brcc bit3_0_800                                         ;1 or 2 on branch
+                 
+                 
+                 		Bit3_1_800:
+000252 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
+                 
+000253 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
+000254 0000      		nop                                                     ;1
+000255 0000      		nop                                                     ;1
+000256 0000      		nop                                                     ;1
+000257 0000      		nop                                                     ;1
+000258 0000      		NOP                                                     ;1
+000259 0000      		NOP                                                     ;1
+00025a 0000      		NOP                                                     ;1
+00025b 0000      		NOP                                                     ;1
+00025c 0000      		nop														;1  additional nop for 20mhz
+00025d 0000      		nop														;1  additional nop for 20mhz
+00025e 0000      		nop														;1  additional nop for 20mhz
+                 
+00025f 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+000260 c00f      		rjmp bit3_Tail_800                                      ;2
+                 
+                 		Bit3_0_800:
+000261 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
+000262 0000      		nop                                                     ;1
+000263 0000      		NOP                                                     ;1
+000264 0000      		nop														;1  additional nop for 20mhz
+                 
+000265 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+000266 0000      		NOP                                                     ;1
+000267 0000      		NOP                                                     ;1
+000268 0000      		NOP                                                     ;1
+000269 0000      		NOP                                                     ;1
+00026a 0000      		NOP                                                     ;1
+00026b 0000      		NOP                                                     ;1
+00026c 0000      		NOP                                                     ;1
+00026d 0000      		NOP                                                     ;1
+00026e 0000      		nop														;1  additional nop for 20mhz
+00026f 0000      		nop														;1  additional nop for 20mhz
+                 
+                 		Bit3_tail_800:
+000270 0000      		Nop                                                     ;1
+000271 0000      		NOP                                                     ;1
+000272 0000      		NOP                                                     ;1
+000273 0000      		nop														;1  additional nop for 20mhz
+                 
+                 			;-------- bit4
+000274 0c00      		lsl RData                                                  ;1
+000275 f478      		brcc bit4_0_800                                         ;1 or 2 on branch
+                 
+                 
+                 		Bit4_1_800:
+000276 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
+                 
+000277 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
+000278 0000      		nop                                                     ;1
+000279 0000      		nop                                                     ;1
+00027a 0000      		nop                                                     ;1
+00027b 0000      		nop                                                     ;1
+00027c 0000      		NOP                                                     ;1
+00027d 0000      		NOP                                                     ;1
+00027e 0000      		NOP                                                     ;1
+00027f 0000      		NOP                                                     ;1
+000280 0000      		nop														;1  additional nop for 20mhz
+000281 0000      		nop														;1  additional nop for 20mhz
+000282 0000      		nop														;1  additional nop for 20mhz
+                 
+000283 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+000284 c00f      		rjmp bit4_Tail_800                                      ;2
+                 
+                 		Bit4_0_800:
+000285 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
+000286 0000      		nop                                                     ;1
+000287 0000      		NOP                                                     ;1
+000288 0000      		nop														;1  additional nop for 20mhz
+                 
+000289 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+00028a 0000      		NOP                                                     ;1
+00028b 0000      		NOP                                                     ;1
+00028c 0000      		NOP                                                     ;1
+00028d 0000      		NOP                                                     ;1
+00028e 0000      		NOP                                                     ;1
+00028f 0000      		NOP                                                     ;1
+000290 0000      		NOP                                                     ;1
+000291 0000      		NOP                                                     ;1
+000292 0000      		nop														;1  additional nop for 20mhz
+000293 0000      		nop														;1  additional nop for 20mhz
+                 
+                 		Bit4_tail_800:
+000294 0000      		Nop                                                     ;1
+000295 0000      		NOP                                                     ;1
+000296 0000      		NOP                                                     ;1
+000297 0000      		nop														;1  additional nop for 20mhz
+                 
+                 			;-------- bit5
+000298 0c00      		lsl RData                                                  ;1
+000299 f478      		brcc bit5_0_800                                         ;1 or 2 on branch
+                 
+                 
+                 		Bit5_1_800:
+00029a 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
+                 
+00029b 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
+00029c 0000      		nop                                                     ;1
+00029d 0000      		nop                                                     ;1
+00029e 0000      		nop                                                     ;1
+00029f 0000      		nop                                                     ;1
+0002a0 0000      		NOP                                                     ;1
+0002a1 0000      		NOP                                                     ;1
+0002a2 0000      		NOP                                                     ;1
+0002a3 0000      		NOP                                                     ;1
+0002a4 0000      		nop														;1  additional nop for 20mhz
+0002a5 0000      		nop														;1  additional nop for 20mhz
+0002a6 0000      		nop														;1  additional nop for 20mhz
+                 
+0002a7 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+0002a8 c00f      		rjmp bit5_Tail_800                                      ;2
+                 
+                 		Bit5_0_800:
+0002a9 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
+0002aa 0000      		nop                                                     ;1
+0002ab 0000      		NOP                                                     ;1
+0002ac 0000      		nop														;1  additional nop for 20mhz
+                 
+0002ad 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+0002ae 0000      		NOP                                                     ;1
+0002af 0000      		NOP                                                     ;1
+0002b0 0000      		NOP                                                     ;1
+0002b1 0000      		NOP                                                     ;1
+0002b2 0000      		NOP                                                     ;1
+0002b3 0000      		NOP                                                     ;1
+0002b4 0000      		NOP                                                     ;1
+0002b5 0000      		NOP                                                     ;1
+0002b6 0000      		nop														;1  additional nop for 20mhz
+0002b7 0000      		nop														;1  additional nop for 20mhz
+                 
+                 		Bit5_tail_800:
+0002b8 0000      		Nop                                                     ;1
+0002b9 0000      		NOP                                                     ;1
+0002ba 0000      		NOP                                                     ;1
+0002bb 0000      		nop														;1  additional nop for 20mhz
+                 			   ;-------- bit6
+0002bc 0c00      		lsl RData                                                  ;1
+0002bd f478      		brcc bit6_0_800                                         ;1 or 2 on branch
+                 
+                 
+                 		Bit6_1_800:
+0002be 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
+                 
+0002bf 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2  High 10 cycles
+0002c0 0000      		nop                                                     ;1
+0002c1 0000      		nop                                                     ;1
+0002c2 0000      		nop                                                     ;1
+0002c3 0000      		nop                                                     ;1
+0002c4 0000      		NOP                                                     ;1
+0002c5 0000      		NOP                                                     ;1
+0002c6 0000      		NOP                                                     ;1
+0002c7 0000      		NOP                                                     ;1
+0002c8 0000      		nop														;1  additional nop for 20mhz
+0002c9 0000      		nop														;1  additional nop for 20mhz
+0002ca 0000      		nop														;1  additional nop for 20mhz
+                 
+0002cb 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+0002cc c00f      		rjmp bit6_Tail_800                                      ;2
+                 
+                 		Bit6_0_800:
+0002cd 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
+0002ce 0000      		nop                                                     ;1
+0002cf 0000      		NOP                                                     ;1
+0002d0 0000      		nop														;1  additional nop for 20mhz
+                 
+0002d1 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+0002d2 0000      		NOP                                                     ;1
+0002d3 0000      		NOP                                                     ;1
+0002d4 0000      		NOP                                                     ;1
+0002d5 0000      		NOP                                                     ;1
+0002d6 0000      		NOP                                                     ;1
+0002d7 0000      		NOP                                                     ;1
+0002d8 0000      		NOP                                                     ;1
+0002d9 0000      		NOP                                                     ;1
+0002da 0000      		nop														;1  additional nop for 20mhz
+0002db 0000      		nop														;1  additional nop for 20mhz
                  
                  		Bit6_tail_800:
-00022d 0000      		Nop                                                     ;1
-00022e 0000      		NOP                                                     ;1
-00022f 0000      		NOP                                                     ;1
-000230 0000      		nop														;1  additional nop for 20mhz
+0002dc 0000      		Nop                                                     ;1
+0002dd 0000      		NOP                                                     ;1
+0002de 0000      		NOP                                                     ;1
+0002df 0000      		nop														;1  additional nop for 20mhz
                  
                  			;-------- bit7
-000231 0c00      		lsl RData                                                  ;1
-000232 f4c0      		brcc bit7_0_800                                         ;1 or 2 on branch
+0002e0 0c00      		lsl RData                                                  ;1
+0002e1 f4c0      		brcc bit7_0_800                                         ;1 or 2 on branch
                  
                  
                  		Bit7_1_800:
-000233 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
+0002e2 0000      		NOP                                                     ;1 extra cycle since the previous branch uses 2 cycles on branch
                  
-000234 9a59      		Sbi WS2811_Port, WS2811_Bit                             ;2  High 10 cycles
+0002e3 9a59      		Sbi WS2811_Port, WS2811_Bit                             ;2  High 10 cycles
                  
-000235 9701      		SBIW r24,1                                              ;2
-000236 f051      		breq bit7_islasthighbit_800                             ;1 or 2 on branch
+0002e4 9701      		SBIW r24,1                                              ;2
+0002e5 f051      		breq bit7_islasthighbit_800                             ;1 or 2 on branch
                  
-000237 0000      		NOP                                                     ;1
-000238 0000      		NOP                                                     ;1
-000239 0000      		NOP                                                     ;1
-00023a 0000      		NOP                                                     ;1
-00023b 0000      		NOP                                                     ;1
-00023c 0000      		nop														;1  additional nop for 20mhz
-00023d 0000      		nop														;1  additional nop for 20mhz
-00023e 0000      		nop														;1  additional nop for 20mhz
-00023f 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+0002e6 0000      		NOP                                                     ;1
+0002e7 0000      		NOP                                                     ;1
+0002e8 0000      		NOP                                                     ;1
+0002e9 0000      		NOP                                                     ;1
+0002ea 0000      		NOP                                                     ;1
+0002eb 0000      		nop														;1  additional nop for 20mhz
+0002ec 0000      		nop														;1  additional nop for 20mhz
+0002ed 0000      		nop														;1  additional nop for 20mhz
+0002ee 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
                  
                  
-000240 cef1      		Rjmp CHANNEL_LOOP_800                                   ;2
+0002ef cef1      		Rjmp CHANNEL_LOOP_800                                   ;2
                  
                  		Bit7_islasthighbit_800:
-000241 0000      		NOP                                                     ;1
-000242 0000      		NOP                                                     ;1
-000243 0000      		NOP                                                     ;1
-000244 0000      		NOP														;1
-000245 0000      		NOP                                                     ;1
-000246 0000      		nop														;1  additional nop for 20mhz
-000247 0000      		nop														;1  additional nop for 20mhz
-000248 0000      		nop														;1  additional nop for 20mhz
-000249 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+0002f0 0000      		NOP                                                     ;1
+0002f1 0000      		NOP                                                     ;1
+0002f2 0000      		NOP                                                     ;1
+0002f3 0000      		NOP														;1
+0002f4 0000      		NOP                                                     ;1
+0002f5 0000      		nop														;1  additional nop for 20mhz
+0002f6 0000      		nop														;1  additional nop for 20mhz
+0002f7 0000      		nop														;1  additional nop for 20mhz
+0002f8 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
                  
-00024a c00d      		rjmp leave_loop_800                                     ;2
+0002f9 c00d      		rjmp leave_loop_800                                     ;2
                  
                  
                  		Bit7_0_800:
-00024b 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
-00024c 0000      		nop                                                     ;1
-00024d 0000      		NOP                                                     ;1
-00024e 0000      		nop														;1  additional nop for 20mhz
-00024f 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
+0002fa 9a59      		Sbi WS2811_Port, WS2811_Bit                                           ;2   High 4 cycles
+0002fb 0000      		nop                                                     ;1
+0002fc 0000      		NOP                                                     ;1
+0002fd 0000      		nop														;1  additional nop for 20mhz
+0002fe 9859      		cbi WS2811_Port, WS2811_Bit                                           ;2  Low
                  
-000250 0000      		NOP                                                     ;1
-000251 0000      		NOP                                                     ;1
-000252 0000      		NOP                                                     ;1
-000253 0000      		nop														;1  additional nop for 20mhz
-000254 0000      		nop														;1  additional nop for 20mhz
+0002ff 0000      		NOP                                                     ;1
+000300 0000      		NOP                                                     ;1
+000301 0000      		NOP                                                     ;1
+000302 0000      		nop														;1  additional nop for 20mhz
+000303 0000      		nop														;1  additional nop for 20mhz
                  
-000255 9701      		SBIW RBufferLoopCounter,1                               ;2
-000256 f009      		breq Leave_loop_800                                     ;1 or 2 on branch
+000304 9701      		SBIW RBufferLoopCounter,1                               ;2
+000305 f009      		breq Leave_loop_800                                     ;1 or 2 on branch
                  
-000257 ceda      		RJMP CHANNEL_LOOP_800                                   ;2
+000306 ceda      		RJMP CHANNEL_LOOP_800                                   ;2
                  
                  
                      Leave_loop_800:
@@ -2872,34 +3184,34 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                 +
                 +
                 +FT245_WaitForWriteLoop :
-000258 994f     +sbic FT245_StatusPin , FT245_TxeBit
-000259 cffe     +rjmp FT245_WaitForWriteLoop
+000307 994f     +sbic FT245_StatusPin , FT245_TxeBit
+000308 cffe     +rjmp FT245_WaitForWriteLoop
                 +FT245_WaitForWrite
                 +
                 +
-00025a ef1f     +ldi Rtemp , 0xff
+000309 ef1f     +ldi Rtemp , 0xff
                 +
                 +  .if FT245_DataDDR < 0x40
-00025b b917     +out FT245_DataDDR , RTemp
+00030a b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
                 +WritePortValue FT245_DataDDR , 0xff
                 +FT245_SetOutput
-00025c e411     +ldi RTemp , 'A'
+00030b e411     +ldi RTemp , 'A'
                 +
                 +
-00025d 9a5c     +sbi FT245_StatusPort , FT245_WrBit
-00025e b918     +out FT245_DataPort , RTemp
-00025f 985c     +cbi FT245_StatusPort , FT245_WrBit
+00030c 9a5c     +sbi FT245_StatusPort , FT245_WrBit
+00030d b918     +out FT245_DataPort , RTemp
+00030e 985c     +cbi FT245_StatusPort , FT245_WrBit
                 +FT245_WriteByte RTemp
                 +
                 +
                 +
-000260 e010     +ldi Rtemp , 0x00
+00030f e010     +ldi Rtemp , 0x00
                 +
                 +  .if FT245_DataDDR < 0x40
-000261 b917     +out FT245_DataDDR , RTemp
+000310 b917     +out FT245_DataDDR , RTemp
                 +  .else 
                 +sts FT245_DataDDR , RTemp
                 +WritePort FT245_DataDDR , RTemp
@@ -2908,185 +3220,62 @@ C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\Dire
                      FT245_SendAck
                  
                 +
-000262 e411     +ldi RTemp , 65
+000311 e411     +ldi RTemp , 65
                 +WaitUsLoop :
-000263 0000     +nop
-000264 0000     +nop
-000265 0000     +nop
-000266 0000     +nop
-000267 0000     +nop
-000268 0000     +nop
-000269 0000     +nop
-00026a 0000     +nop
-00026b 0000     +nop
-00026c 0000     +nop
-00026d 0000     +nop
-00026e 0000     +nop
-00026f 0000     +nop
-000270 0000     +nop
-000271 0000     +nop
-000272 0000     +nop
-000273 0000     +nop
-000274 0000     +nop
-000275 0000     +nop
-000276 0000     +nop
-000277 0000     +nop
-000278 951a     +dec RTemp
-000279 f749     +brne WaitUsLoop
+000312 0000     +nop
+000313 0000     +nop
+000314 0000     +nop
+000315 0000     +nop
+000316 0000     +nop
+000317 0000     +nop
+000318 0000     +nop
+000319 0000     +nop
+00031a 0000     +nop
+00031b 0000     +nop
+00031c 0000     +nop
+00031d 0000     +nop
+00031e 0000     +nop
+00031f 0000     +nop
+000320 0000     +nop
+000321 0000     +nop
+000322 0000     +nop
+000323 0000     +nop
+000324 0000     +nop
+000325 0000     +nop
+000326 0000     +nop
+000327 951a     +dec RTemp
+000328 f749     +brne WaitUsLoop
                      WaitUs 65
                  
                 +
                 +        .if Led_Port < 0x20
-00027a 985a     +cbi Led_Port , Led_Yellow_Bit
+000329 985a     +cbi Led_Port , Led_Yellow_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	ClearPortBit Led_Port,Led_Yellow_Bit
                 +
                 +        .if Led_Port < 0x20
-00027b 985b     +cbi Led_Port , Led_Red_Bit
+00032a 985b     +cbi Led_Port , Led_Red_Bit
                 +		.else 
                 +ReadPort Led_Port , RTemp
                  	ClearPortBit Led_Port,Led_Red_Bit
                  
-00027c 9508      ret
+00032b 9508      ret
                  
-00027d 6e45
-00027e 2064
-00027f 666f
-000280 6320
-000281 646f
-C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm(771): warning: .cseg .db misalignment - padding zero byte
-000282 0065      .db	"End of code"
+00032c 6e45
+00032d 2064
+00032e 666f
+00032f 6620
+000330 7269
+000331 776d
+000332 7261
+C:\Users\Tom\Documents\GitHub\DirectStrip Controller\DirectStrip Controller\DirectStrip Controller.asm(859): warning: .cseg .db misalignment - padding zero byte
+000333 0065      .db	"End of firmware"
                  
-000283 0100
-000284 0302
-000285 0504
-000286 0706
-000287 0908
-000288 0b0a
-000289 0d0c
-00028a 0f0e
-00028b 1110
-00028c 1312
-00028d 1514
-00028e 1716
-00028f 1918
-000290 1b1a
-000291 1d1c
-000292 1f1e
-000293 2120
-000294 2322
-000295 2524
-000296 2726
-000297 2928
-000298 2b2a
-000299 2d2c
-00029a 2f2e
-00029b 3130
-00029c 3332
-00029d 3534
-00029e 3736
-00029f 3938
-0002a0 3b3a
-0002a1 3d3c
-0002a2 3f3e
-0002a3 4140
-0002a4 4342
-0002a5 4544
-0002a6 4746
-0002a7 4948
-0002a8 4b4a
-0002a9 4d4c
-0002aa 4f4e
-0002ab 5150
-0002ac 5352
-0002ad 5554
-0002ae 5756
-0002af 5958
-0002b0 5b5a
-0002b1 5d5c
-0002b2 5f5e
-0002b3 6160
-0002b4 6362
-0002b5 6564
-0002b6 6766
-0002b7 6968
-0002b8 6b6a
-0002b9 6d6c
-0002ba 6f6e
-0002bb 7170
-0002bc 7372
-0002bd 7574
-0002be 7776
-0002bf 7978
-0002c0 7b7a
-0002c1 7d7c
-0002c2 7f7e
-0002c3 8180
-0002c4 8382
-0002c5 8584
-0002c6 8786
-0002c7 8988
-0002c8 8b8a
-0002c9 8d8c
-0002ca 8f8e
-0002cb 9190
-0002cc 9392
-0002cd 9594
-0002ce 9796
-0002cf 9998
-0002d0 9b9a
-0002d1 9d9c
-0002d2 9f9e
-0002d3 a1a0
-0002d4 a3a2
-0002d5 a5a4
-0002d6 a7a6
-0002d7 a9a8
-0002d8 abaa
-0002d9 adac
-0002da afae
-0002db b1b0
-0002dc b3b2
-0002dd b5b4
-0002de b7b6
-0002df b9b8
-0002e0 bbba
-0002e1 bdbc
-0002e2 bfbe
-0002e3 c1c0
-0002e4 c3c2
-0002e5 c5c4
-0002e6 c7c6
-0002e7 c9c8
-0002e8 cbca
-0002e9 cdcc
-0002ea cfce
-0002eb d1d0
-0002ec d3d2
-0002ed d5d4
-0002ee d7d6
-0002ef d9d8
-0002f0 dbda
-0002f1 dddc
-0002f2 dfde
-0002f3 e1e0
-0002f4 e3e2
-0002f5 e5e4
-0002f6 e7e6
-0002f7 e9e8
-0002f8 ebea
-0002f9 edec
-0002fa efee
-0002fb f1f0
-0002fc f3f2
-0002fd f5f4
-0002fe f7f6
-0002ff f9f8
-000300 fbfa
-000301 fdfc
-000302 fffe      .db 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 6                 5, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 1                 23, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 1                 74, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 2000100           25, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255 
+                 .DSEG
                  
+000100           DataBuffer: .BYTE DataBufferSize
+                  
 
 
 RESOURCE USE INFORMATION
@@ -3104,11 +3293,11 @@ counted separately from r26..r31 here.
 .dseg memory usage only counts static data declared with .byte
 
 "ATmega1284P" register use summary:
-r0 :  13 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
+r0 :  15 r1 :   0 r2 :   0 r3 :   0 r4 :   0 r5 :   0 r6 :   0 r7 :   0 
 r8 :   0 r9 :   0 r10:   0 r11:   0 r12:   0 r13:   0 r14:   0 r15:   0 
-r16:   2 r17:  79 r18:  14 r19:   6 r20:   4 r21:   0 r22:   0 r23:   0 
-r24:   7 r25:   3 r26:   3 r27:   3 r28:   0 r29:   0 r30:   2 r31:   2 
-x  :   3 y  :   0 z  :   0 
+r16:   2 r17:  89 r18:  14 r19:   6 r20:   4 r21:   0 r22:   0 r23:   0 
+r24:   9 r25:   4 r26:   4 r27:   4 r28:   0 r29:   0 r30:   2 r31:   2 
+x  :   4 y  :   0 z  :   0 
 Registers used: 13 out of 35 (37.1%)
 
 "ATmega1284P" instruction use summary:
@@ -3116,28 +3305,28 @@ Registers used: 13 out of 35 (37.1%)
 andi  :   0 asr   :   0 bclr  :   0 bld   :   0 brbc  :   0 brbs  :   0 
 brcc  :   8 brcs  :   0 break :   0 breq  :   2 brge  :   0 brhc  :   0 
 brhs  :   0 brid  :   0 brie  :   0 brlo  :   1 brlt  :   0 brmi  :   0 
-brne  :   6 brpl  :   0 brsh  :   3 brtc  :   0 brts  :   0 brvc  :   0 
-brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :  51 cbr   :   0 
+brne  :   7 brpl  :   0 brsh  :   3 brtc  :   0 brts  :   0 brvc  :   0 
+brvs  :   0 bset  :   0 bst   :   0 call  :   0 cbi   :  57 cbr   :   0 
 clc   :   0 clh   :   0 cli   :   1 cln   :   0 clr   :   0 cls   :   0 
 clt   :   0 clv   :   0 clz   :   0 com   :   0 cp    :   0 cpc   :   0 
 cpi   :   5 cpse  :   0 dec   :   1 elpm  :   0 eor   :   0 fmul  :   0 
-fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   1 in    :   7 inc   :   6 
-jmp   :   0 ld    :   1 ldd   :   0 ldi   :  55 lds   :   1 lpm   :   0 
+fmuls :   0 fmulsu:   0 icall :   0 ijmp  :   1 in    :   9 inc   :   6 
+jmp   :   1 ld    :   2 ldd   :   0 ldi   :  62 lds   :   1 lpm   :   0 
 lsl   :   8 lsr   :   0 mov   :   0 movw  :   0 mul   :   0 muls  :   0 
-mulsu :   0 neg   :   0 nop   : 275 or    :   0 ori   :   1 out   :  38 
-pop   :   0 push  :   0 rcall :   7 ret   :   8 reti  :   0 rjmp  :  62 
-rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 sbi   :  50 sbic  :  19 
-sbis  :   1 sbiw  :   4 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 
+mulsu :   0 neg   :   0 nop   : 281 or    :   0 ori   :   1 out   :  44 
+pop   :   0 push  :   0 rcall :   9 ret   :   9 reti  :   0 rjmp  :  66 
+rol   :   0 ror   :   0 sbc   :   0 sbci  :   0 sbi   :  56 sbic  :  23 
+sbis  :   1 sbiw  :   5 sbr   :   0 sbrc  :   0 sbrs  :   0 sec   :   0 
 seh   :   0 sei   :   0 sen   :   0 ser   :   0 ses   :   0 set   :   0 
 sev   :   0 sez   :   0 sleep :   0 spm   :   0 st    :   2 std   :   0 
 sts   :   4 sub   :   0 subi  :   1 swap  :   0 tst   :   0 wdr   :   1 
 
-Instructions used: 32 out of 114 (28.1%)
+Instructions used: 33 out of 114 (28.9%)
 
 "ATmega1284P" memory use summary [bytes]:
 Segment   Begin    End      Code   Data   Used    Size   Use%
 ---------------------------------------------------------------
-[.cseg] 0x000000 0x000606   1274    268   1542  131072   1.2%
+[.cseg] 0x000000 0x000668   1372    268   1640  131072   1.3%
 [.dseg] 0x000100 0x0040c0      0  16320  16320   16384  99.6%
 [.eseg] 0x000000 0x000000      0      0      0    4096   0.0%
 
