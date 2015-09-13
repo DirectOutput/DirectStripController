@@ -97,16 +97,28 @@
 .macro FT245_WriteByte;(Register)
 
 	 sbi FT245_StatusPort, FT245_WrBit
+	 nop
+	 nop
 	 out FT245_DataPort,@0
+     nop
+	 nop
+	 nop
 	 cbi FT245_StatusPort, FT245_WrBit
+     nop
+	 nop
 .endm
 
 
 .macro FT245_SendByte;(Register)
   FT245_WaitForWrite
   FT245_SetOutput
+  nop
+  nop
   FT245_WriteByte @0
+
   FT245_SetInput
+  nop
+  nop
 .endm
 
 .macro FT245_SendAck

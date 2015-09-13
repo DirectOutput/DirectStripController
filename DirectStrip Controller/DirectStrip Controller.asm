@@ -328,7 +328,7 @@ SendData:
     FT245_SendByte RData
 
 		
-  //     FT245_SendByte RData
+  //  FT245_SendByte RData
   //    FT245_SendByte RBufferLoopCounterHigh
 //	  FT245_SendByte RBufferLoopCounter
   
@@ -350,8 +350,9 @@ ReceiveData:
   nop
   nop
   FT245_WaitForRead_PayLoad LedAlternateBlink
+
   FT245_ReadByte RBufferLoopCounter
-      
+   
 
 
 
@@ -366,13 +367,15 @@ ReceiveData:
   ReceiveData_Loop:
     FT245_WaitForRead
 
+
+
     FT245_ReadByte RData
 	st x+,RData
 		
   //     FT245_SendByte RData
   //    FT245_SendByte RBufferLoopCounterHigh
 //	  FT245_SendByte RBufferLoopCounter
-  
+
   sbiw RBufferLoopCounter,1
   brne ReceiveData_Loop 
   FT245_SendAck
