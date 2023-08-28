@@ -40,7 +40,14 @@
  ;WS2811 Data Line
  .equ WS2811_DDR=DDRD
  .equ WS2811_Port=PORTD
- .equ WS2811_Bit=1;
+ .equ WS2811_Bit=1
+
+ ;WS2811 Spare Line
+ .equ WS2811Spare_DDR=DDRB
+ .equ WS2811Spare_Port=PORTB
+ .equ WS2811Spare_Bit=0
+
+
 
  ;ExtPort
  .equ Ext_DDR=DDRA
@@ -109,9 +116,9 @@ jmp Init
 //** Firmwareinformation
 //*********************************************
 
-//Firmware version 1.2
+//Firmware version 1.3
 .org 0x70
-.db 0x03,0x31,0x2e,0x32,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
+.db 0x03,0x31,0x2e,0x33,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00
 
 //Hardware revision 5.0
 .org 0x78
@@ -119,15 +126,7 @@ jmp Init
 
 //Checksum
 .org 0x7f
-.db 0x53,0x00
-
-
-
-
-
-
-
-
+.db 0x52,0x00
 
 ;*********************************************
 ;** Init
@@ -170,6 +169,9 @@ Init:
   ;Set IO direction to output for WS2811 connector
   SetPortBit WS2811_DDR,WS2811_Bit
   ClearPortBit WS2811_Port,WS2811_Bit
+
+  SetPortBit WS2811Spare_DDR,WS2811Spare_Bit
+  ClearPortBit WS2811Spare_Port,WS2811Spare_Bit
 
   
   Main:
@@ -223,7 +225,7 @@ Init:
     rjmp UnknownCommand		;Q
     rjmp ReceiveData		;R
     rjmp SendData			;S
-    rjmp UnknownCommand		;T
+    rjmp TestPort    		;T
     rjmp UnknownCommand		;U
     rjmp SendVersion		;V
     rjmp UnknownCommand		;W
@@ -281,6 +283,26 @@ ExtPort:
   FT245_SendAck
   WritePort ExtPort,RData
 ret
+
+;Tests the data port
+TestPort:
+   FT245_WaitForRead_PayLoad LedAlternateBlink
+   FT245_ReadByte RData
+   FT245_SendAck
+
+   tst RData
+   breq TestPort_Off
+    Sbi WS2811_Port, WS2811_Bit
+	Sbi WS2811Spare_Port, WS2811Spare_Bit
+   
+   rjmp TestPort_Exit
+
+   TestPort_Off:
+   cbi WS2811_Port, WS2811_Bit
+   cbi WS2811Spare_Port, WS2811Spare_Bit
+   TestPort_Exit:
+ret
+
 
 ;Clears the data buffer
 ClearDataBuffer:
